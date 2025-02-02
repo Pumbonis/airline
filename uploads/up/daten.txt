@@ -1,0 +1,532 @@
+TripInfoAH: ja
+CleaningAH: nein
+CleaningTelAH: -
+FuelAH: AFS
+FuelTelAH: 90910
+StationAH: 0
+StationTelAH: 0
+HoldsearchAH: nein
+TechnikAH: 0
+TechnikTelAH: 0
+CateringAH: 0
+CateringTelAH: 0
+CargoAH: Cargogate
+CargoTelAH: 92289
+ICAOIATAAH: AH
+LMCAH: 0
+PushbackAH: aerogate
+zusatz1AH: Manual L/S
+
+TripInfoUX: nein
+CleaningUX: Heico (Müll holen)
+CleaningTelUX: 90990
+FuelUX: AFS
+FuelTelUX: 90910
+StationUX: Valentin
+StationTelUX: 015164632816
+HoldsearchUX: nein
+TechnikUX: NAYAK
+TechnikTelUX: 01703760823
+CateringUX: nein
+CateringTelUX: 0
+CargoUX: Cargogate
+CargoTelUX: 92284
+ICAOIATAUX: UX/AEA
+LMCUX: ja
+PushbackUX: aerogate
+zusatz1UX: 
+
+TripInfoAFKL: 0
+CleaningAFKL: 0
+CleaningTelAFKL: 0 
+FuelAFKL: 0
+FuelTelAFKL: 0
+StationAFKL: 0
+StationTelAFKL: 0
+HoldsearchAFKL: 0
+TechnikAFKL: 0
+TechnikTelAFKL: 0 
+CateringAFKL: 0
+CateringTelAFKL: 0
+CargoAFKL: 0
+CargoTelAFKL: 0
+ICAOIATAAFKL: AF_KL/AFR_KLM
+LMCAFKL: 
+PushbackAFKL: aerogate
+zusatz1AFKL: 
+
+TripInfoBAE: Ja
+CleaningBAE: C
+CleaningTelBAE:  
+FuelBAE:   
+FuelTelBAE:  
+StationBAE: Nein
+StationTelBAE:  
+HoldsearchBAE:  
+TechnikBAE:  
+TechnikTelBAE:  
+CateringBAE: ACM
+CateringTelBAE:  
+CargoBAE:  
+CargoTelBAE:  
+ICAOIATABAE: BAE
+LMCBAE: 0
+PushbackBAE: aerogate
+zusatz1BAE:  
+
+TripInfoDE: -
+CleaningDE: -
+CleaningTelDE: -
+FuelDE: -
+FuelTelDE: 
+StationDE: -
+StationTelDE: -  
+HoldsearchDE: - 
+TechnikDE: - 
+TechnikTelDE: - 
+CateringDE: - 
+CateringTelDE: -  
+CargoDE: -  
+CargoTelDE: - 
+ICAOIATADE: CFG/DE
+LMCDE: 0
+PushbackDE: aerogate
+zusatz1DE: -
+
+
+TripInfoDL: -
+CleaningDL: -
+CleaningTelDL: -
+FuelDL: -
+FuelTelDL: -
+StationDL: -
+StationTelDL: -  
+HoldsearchDL: - 
+TechnikDL: - 
+TechnikTelDL: - 
+CateringDL: - 
+CateringTelDL: -  
+CargoDL: -  
+CargoTelDL: - 
+ICAOIATADL: DL
+LMCDL: 0
+PushbackDL: aerogate
+zusatz1DL: -
+
+TripInfoB4: Ja
+CleaningB4: Camso
+CleaningTelB4: 84000
+FuelB4: SKY
+FuelTelB4: 92764
+StationB4: -
+StationTelB4: -
+HoldsearchB4: Ja
+TechnikB4: FL Technics
+TechnikTelB4: -
+CateringB4: Air Catering
+CateringTelB4: 96395
+CargoB4: no
+CargoTelB4: 
+ICAOIATAB4: B4
+LMCB4: NO
+PushbackB4: aerogate
+zusatz1B4: Ramp Check Sheets 
+
+TripInfoLY: Blockfuel
+CleaningLY: HEICO
+CleaningTelLY: 96991
+FuelLY: AFS
+FuelTelLY: 90910
+StationLY: Eddi Tsadok Zoellig
+StationTelLY: 91700
+HoldsearchLY: ja
+TechnikLY: Boston Air
+TechnikTelLY: +447990016771
+CateringLY: Gate Gourmet
+CateringTelLY: 93424
+CargoLY: LUG
+CargoTelLY: 96033
+ICAOIATALY: LY
+LMCLY: 0
+PushbackLY: aerogate
+zusatz1LY: 0
+
+TripInfoEK: nein
+CleaningEK: heico
+CleaningTelEK: 96990 
+FuelEK: Sky
+FuelTelEK: 97264 
+StationEK: J. Sobottka-Rogalla
+StationTelEK: 92530
+HoldsearchEK: no
+TechnikEK: AZ-Technik 
+TechnikTelEK: 91180 
+CateringEK: DO&CO
+CateringTelEK: 98022 
+CargoEK: EK
+CargoTelEK: - 
+ICAOIATAEK: UAE/EK
+LMCDL: 500kg
+PushbackEK: AZ
+zusatz1EK: no
+
+TripInfoUD: ja
+CleaningUD: HEICO
+CleaningTelUD: 96990
+FuelUD: SKY
+FuelTelUD: 92764
+StationUD: -
+StationTelUD: -
+HoldsearchUD: no
+TechnikUD: -
+TechnikTelUD: -
+CateringUD: -
+CateringTelUD: -
+CargoUD: -
+CargoTelUD: -
+ICAOIATAUD: UD
+LMCUD: ja
+PushbackUD: aerogate
+zusatz1UD: - 
+
+TripInfoFL: Ja
+CleaningFL: HEICO
+CleaningTelFL: 96990
+FuelFL: AFS
+FuelTelFL: 90910
+StationFL: -
+StationTelFL: -
+HoldsearchFL: nein
+TechnikFL: -
+TechnikTelFL: -
+CateringFL: -
+CateringTelFL: -
+CargoFL: -
+CargoTelFL: -
+ICAOIATAFL: FL
+LMCFL: Ja
+PushbackFL: aerogate 
+zusatz1FL: -
+
+TripInfoA9: ja
+CleaningA9: CAMSO
+CleaningTelA9: 84000
+FuelA9: AFS
+FuelTelA9: 90910
+StationA9: Georg Okujava
+StationTelA9: +49 1609 0627 573
+HoldsearchA9: ja
+TechnikA9: -
+TechnikTelA9: -
+CateringA9: -
+CateringTelA9: -
+CargoA9: -
+CargoTelA9: -
+ICAOIATAA9: A9
+LMCA9: ja
+PushbackA9: aerogate
+zusatz1A9: - 
+
+TripInfoIV: Ja
+CleaningIV: Camso
+CleaningTelIV: 84000
+FuelIV: AFS
+FuelTelIV: 97264
+StationIV: -
+StationTelIV: -
+HoldsearchIV: nein
+TechnikIV: - 
+TechnikTelIV: -
+CateringIV: DO&CO (?)
+CateringTelIV: -
+CargoIV: -
+CargoTelIV: -
+ICAOIATAIV: IV 
+LMCIV: ja
+PushbackIV: aerogate 
+zusatz1IV: -
+
+TripInfoGF: ja
+CleaningGF: HEICO
+CleaningTelGF: 96990 (Workorder)
+FuelGF: AFS
+FuelTelGF: 90910
+StationGF: Aydogan Dincer
+StationTelGF: +49 152 51540897
+HoldsearchGF: nein
+TechnikGF: Northern Aerotech
+TechnikTelGF: -
+CateringGF: DO&CO
+CateringTelGF: -
+CargoGF: Cargogate
+CargoTelGF: 92289
+ICAOIATAGF: GF
+LMCGF: ja
+PushbackGF: Northern Aerotech
+zusatz1GF: Crewbags H5
+
+TripInfoAZ: Block Fuel
+CleaningAZ: Heico
+CleaningTelAZ: 96990
+FuelAZ: AFS
+FuelTelAZ: 90910
+StationAZ: Donatella Weiss
+StationTelAZ: 016093992790
+HoldsearchAZ: nein
+TechnikAZ: AZ-Technik
+TechnikTelAZ: 91180
+CateringAZ: Gate Gourmet (via Stn.)
+CateringTelAZ: 93424
+CargoAZ: Swissport
+CargoTelAZ: 94220
+ICAOIATAAZ: AZ/ITY
+LMCAZ: 0
+PushbackAZ: Singleman
+zusatz1AZ: BVD: SWP
+
+TripInfoKU: ja
+CleaningKU: HEICO
+CleaningTelKU: 96990
+FuelKU: AFS
+FuelTelKU: 90910
+StationKU: Fr. Valeria Ruggerio
+StationTelKU: 91146
+HoldsearchKU: nein
+TechnikKU: FLTechnics
+TechnikTelKU: +37 065103643
+CateringKU: Return Catering o/b
+CateringTelKU: -
+CargoKU: Swissport
+CargoTelKU: 94220
+ICAOIATAKU: KU
+LMCKU: ja
+PushbackKU: aerogate
+zusatz1KU: Handy #24 
+
+TripInfoDY: nein
+CleaningDY: by Crew
+CleaningTelDY: -
+FuelDY: AFS
+FuelTelDY: 90910
+StationDY: -
+StationTelDY: -
+HoldsearchDY: nein
+TechnikDY: LH
+TechnikTelDY: (?)
+CateringDY: GG bei Delay
+CateringTelDY: 93425
+CargoDY: Swissport
+CargoTelDY: 94220
+ICAOIATADY: DY/D8
+LMCDY: -
+PushbackDY: aerogate
+zusatz1DY: Abschluss per SMS 
+
+TripInfoWY: ja
+CleaningWY: Heico
+CleaningTelWY: 96990
+FuelWY: AFS
+FuelTelWY: 90910
+StationWY: Marcella Bonetto
+StationTelWY: 96090
+HoldsearchWY: ja
+TechnikWY: Direct Maintenance
+TechnikTelWY: +49 179 4340566
+CateringWY: Return Catering o/b
+CateringTelWY: -
+CargoWY: Cargogate
+CargoTelWY: 92289
+ICAOIATAWY: WY
+LMCWY: ja
+PushbackWY: EFM
+zusatz1WY: -
+
+TripInfoQR: ja 
+CleaningQR: Camso
+CleaningTelQR: 84000  
+FuelQR: AFS 
+FuelTelQR: 90910  
+StationQR: Hr. D. Shestobaev  
+StationTelQR: 92588 
+HoldsearchQR: JA - Plus Fotos 
+TechnikQR: FLTechnics
+TechnikTelQR: 0037065103643
+CateringQR: DO&CO 
+CateringTelQR: 98021 
+CargoQR: Swissport 
+CargoTelQR: 94220 
+ICAOIATAQR: QR 
+LMCQR: None
+PushbackQR: FLTechnics
+zusatz1QR: Anzahl Decken / Catering / Wasserqty.
+
+TripInfoSV: ja
+CleaningSV: Heico
+CleaningTelSV: 96990
+FuelSV: AFS
+FuelTelSV: 90910
+StationSV: Ragab Azzab 91130
+StationTelSV: +49 1622608707     
+HoldsearchSV: nein
+TechnikSV: Norhtern Aerotech
+TechnikTelSV: +49 15770957920
+CateringSV: Newrest
+CateringTelSV: +49 15114149387
+CargoSV: Cargogate
+CargoTelSV: 92289
+ICAOIATASV: SV
+LMCSV: nur durch WB
+PushbackSV: aerogate
+zusatz1SV: - 
+
+TripInfoGQ: Ja
+CleaningGQ: HEICO
+CleaningTelGQ: 96990
+FuelGQ: AFS
+FuelTelGQ: 90910
+StationGQ: Ioannis Vrettos
+StationTelGQ: +30 697 911 0239
+HoldsearchGQ: NO
+TechnikGQ: NAYAK on req. via GQ-HQ
+TechnikTelGQ: -
+CateringGQ: No
+CateringTelGQ: -
+CargoGQ: No
+CargoTelGQ: 0
+ICAOIATAGQ: GQ/SEH
+LMCGQ: yes
+PushbackGQ: Ja
+zusatz1GQ: BVD Aviapartner
+
+TripInfoSZ: nein
+CleaningSZ: Heico
+CleaningTelSZ: 96990
+FuelSZ: AFS
+FuelTelSZ: 90910
+StationSZ: -
+StationTelSZ: -
+HoldsearchSZ: nein
+TechnikSZ: -
+TechnikTelSZ: -
+CateringSZ: Augsburg Air Catering
+CateringTelSZ: 96395
+CargoSZ: Cargogate
+CargoTelSZ: 92289
+ICAOIATASZ: SZ
+LMCSZ: ja
+PushbackSZ: aerogate
+zusatz1SZ: L/S by crew 
+
+TripInfo2S: ja
+Cleaning2S: Heico
+CleaningTel2S: 96990
+Fuel2S: AFS
+FuelTel2S: 90910
+Station2S: -
+StationTel2S: -
+Holdsearch2S: nur Widebody
+Technik2S: -
+TechnikTel2S: -
+Catering2S: -
+CateringTel2S: -
+Cargo2S: -
+CargoTel2S: -
+ICAOIATA2S: 2S
+LMC2S: ja
+Pushback2S: aerogate
+zusatz12S: - 
+
+TripInfo3V: nein
+Cleaning3V: -
+CleaningTel3V: -
+Fuel3V: AFS
+FuelTel3V: 90910
+Station3V: FedEx Rep.
+StationTel3V: 089 3581-75007 /-75015
+Holdsearch3V: nein
+Technik3V: Über FedEx Rep.
+TechnikTel3V: -
+Catering3V: -
+CateringTel3V: -
+Cargo3V: FedEx
+CargoTel3V: 
+ICAOIATA3V: 3V/FX/TNT/TAY
+LMC3V: -
+Pushback3V: aerogate
+zusatz13V: - 
+
+TripInfoSR: ja
+CleaningSR: -
+CleaningTelSR: -
+FuelSR: AFS or SKY
+FuelTelSR: 90910 or 92764
+StationSR: -
+StationTelSR: -
+HoldsearchSR: -
+TechnikSR: -
+TechnikTelSR: -
+CateringSR: -
+CateringTelSR: -
+CargoSR: -
+CargoTelSR: -
+ICAOIATASR: SR
+LMCSR: -
+PushbackSR: -
+zusatz1SR: -
+
+TripInfoX3: ja
+CleaningX3: Wieprecht
+CleaningTelX3: 82310
+FuelX3: AFS or SKY
+FuelTelX3: 90910 or 92764
+StationX3: Severin Siebert
+StationTelX3: 91755
+HoldsearchX3: ja non EU Dest.
+TechnikX3: NAYAK
+TechnikTelX3: 01703760823
+CateringX3: Gate Gourmet
+CateringTelX3: 93425
+CargoX3: Swissport
+CargoTelX3: 94220
+ICAOIATAX3: X3
+LMCX3: ja
+PushbackX3: EFM
+zusatz1X3: BVD: SWP // Fotos von Netzen dep.
+
+TripInfoTK: ja
+CleaningTK: Camso
+CleaningTelTK: 84000
+FuelTK: AFS
+FuelTelTK: 90910
+StationTK: Hr. F. Bakova
+StationTelTK: 92700
+HoldsearchTK: ja
+TechnikTK: via STN
+TechnikTelTK: -
+CateringTK: Gate Gourmet
+CateringTelTK: 93424
+CargoTK: Cargogate
+CargoTelTK: 92289
+ICAOIATATK: TK
+LMCTK: ja
+PushbackTK: EFM
+zusatz1TK: - 
+
+TripInfoBR: -
+CleaningBR: -
+CleaningTelBR: -
+FuelBR: -
+FuelTelBR: -
+StationBR: -
+StationTelBR: -
+HoldsearchBR: -
+TechnikBR: -
+TechnikTelBR: -
+CateringBR: -
+CateringTelBR: -
+CargoBR: -
+CargoTelBR: -
+ICAOIATABR: EVA/BR
+LMCBR: -
+PushbackBR: -
+zusatz1BR: Passage only!

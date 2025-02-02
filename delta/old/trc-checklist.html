@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+	"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+ table.main { width: 100%; }
+ tr.row {}
+ td.cell { padding: 5px; }
+ div.block {}
+ div.paragraph {}
+ .font0 { font:4pt Arial, sans-serif; }
+ .font1 { font:5pt Arial, sans-serif; }
+ .font2 { font:7pt Arial, sans-serif; }
+ .font3 { font:1.25em Arial, sans-serif; }
+ .font4 { font:27pt Arial, sans-serif; }
+ .time { margin-left: 5px; }
+</style>
+<script type="text/javascript">
+function updateTime(checkbox) {
+    var parent = checkbox.parentElement;
+    var timeSpan = parent.querySelector('.time');
+
+    if (checkbox.checked) {
+        var now = new Date();
+        var hours = String(now.getHours()).padStart(2, '0');
+        var minutes = String(now.getMinutes()).padStart(2, '0');
+        var timeString = hours + ":" + minutes;
+
+        if (!timeSpan) {
+            timeSpan = document.createElement('span');
+            timeSpan.className = 'time';
+            timeSpan.style.marginLeft = '5px';
+            parent.appendChild(timeSpan);
+        }
+
+        timeSpan.textContent = timeString;
+    } else {
+        if (timeSpan) {
+            timeSpan.remove();
+        }
+    }
+}
+</script>
+</head>
+<body>
+<table border="1">
+<tr><td>
+<p class="font4">M</p></td><td>
+<p class="font2">Delta Air Lines<br>TRC Checklist</p></td><td>
+<p class="font3">Revisionsstand 0</p>
+<p class="font3">Seite 1 von 1</p></td></tr>
+</table>
+<p class="font3">Date:Flight No.: <input type="number" size="4" maxlength="4"> &nbsp;&nbsp;TRC 3LC:<input type="number" size="4" maxlength="3"></p>
+
+<table border="1" class="main">
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Pre-Flight Briefing with ALA</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check Availability of Staff/Equipment</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check Chocking/Coning</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check adherence to Ramp Safety procedures</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check back stairs positioned/door opened</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check if blankets are positioned at back stairs [Frachtfahrer]</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Cleaners on position at disembarkation end</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Fuel Truck on position [STD -90]</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Water Service on position [STD-80]</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Lavatory Service on position [STD-80] / Lavatory Sheet completed</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Crew 0/B [STD-70] -&gt; Call DL OPS if delayed or call bus dispo if crewbus<br>already underway [21285]</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Lavatory Sheet: Truck No. [TT...J transmitted to DL OPS</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">DL Fuel Sheet completed and fuel figures transmitted to DL OPS</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">DL Fuel Sheet: ALA entered Name/PPR Number</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">DL Fuel Sheet: White Copy to flight crew</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check cleaning/security check progress/ communicate boarding start<br>to gate</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Check red/green light for passenger boarding/ give thumbs up to bus<br>driver when needed</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Monitor bus arrival/safe embarkation of passengers</p></td>
+ 
+</tr>
+<tr>
+    <td class="cell"><input type="checkbox" onclick="updateTime(this)"></td>
+    <td class="cell"><p class="font3">Monitor TOBT and adjust if necessary [check with gate/ALA]</p></td>
+ 
+</tr>
+</table>
+
+<p class="font3">Check Quick Reference for further infos/ Ask ALA if in doubt</p>
+<p class="font3">-&gt; Inform OPS/Station asap in case of any irregs or foreseeable delays</p>
+
+<table border="1">
+<tr><td style="vertical-align:bottom;">
+<p><span class="font0" style="font-weight:bold;">Erstellt durch AGSO</span></p></td><td></td><td style="vertical-align:bottom;">
+<p><span class="font0" style="font-weight:bold;">Gepruft und genehmigt durch AGS</span></p></td></tr>
+<tr><td>
+<p><span class="font0" style="font-weight:bold;">Erstellt am 26.06.2024</span></p></td><td></td><td>
+<p><span class="font0" style="font-weight:bold;">Gultig ab 27.06.2024</span></p></td></tr>
+</table>
+<p><span class="font1" style="font-style:italic;">Uncontrolled copy If copied, downloaded or printed</span></p>
+</body>
+</html>

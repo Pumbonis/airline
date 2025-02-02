@@ -1,0 +1,32 @@
+/* When Screen is greater than 600px */
+@media (width > 600px) {
+ body {
+  background-color: blue;
+  color: #fff;
+ }
+}
+
+/* When Screen is greater than 900px & less than 1500px */ @media (1500px >= width >=900px) {
+  @media (1500px <= width <=900px) {
+  body {
+   background-color: rgb(203, 230, 0);
+   color: #000;
+  }
+}
+
+/* When Screen is less than 1600px & greater than 400px */
+@media (400px <= width <=600px) {
+body {
+  background-color: orangered;
+  color: #000;
+  }
+}
+
+/* When Screen is less than 400px */
+@media (width < 400px) {
+body {
+  background-color: purple;
+  color: #fff;
+  }
+}
+

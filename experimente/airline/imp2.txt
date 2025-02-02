@@ -1,0 +1,443 @@
+TripInfoEK: Was geht ab
+CleaningEK: heico
+CleaningTelEK: 12345
+FuelEK: Sky
+FuelTelEK: 00 
+StationEK: J. Sobottka-Rogalla
+StationTelEK: 92530
+TixTelEK: 92542
+TechnikEK: AZ
+TechnikTelEK: 00 
+CateringEK: DO&CO
+CateringTelEK: 00 
+CargoEK: EK
+CargoTelEK: 00 
+ICAOIATAEK: UAE/EK
+LMCEK: 3000kg - 5000kg
+PushbackEK: AZ 
+Zusatz1EK:  
+
+
+TripInfoQR: Nein
+CleaningQR: Camso
+CleaningTelQR: 0
+FuelQR: AFS
+FuelTelQR: 0
+StationQR: Björn
+StationTelQR: 0
+TixTelQR: 0
+TechnikQR: FLTechnics
+TechnikTelQR: 0
+CateringQR: DO&CO
+CateringTelQR: 0 
+CargoQR: Swissport 
+CargoTelQR: 0
+ICAOIATAQR: QR/QTR
+LMCQR: 3000kg - 5000kg
+PushbackQR: FLTechnics
+Zusatz1QR: 
+
+
+TripInfoX3: Ja
+CleaningX3: Wieprecht
+CleaningTelX3: 82310
+FuelX3: SKY
+FuelTelX3: 97264
+StationX3: Severin Siebert
+StationTelX3: 
+TixTelX3: 
+TechnikX3: NAYAK
+TechnikTelX3: 01703760823
+CateringX3: Gate Gourmet
+CateringTelX3: 93425
+CargoX3: Swissport 
+CargoTelX3: 94220
+ICAOIATAX3: X3/HLX
+LMCX3: 
+PushbackX3: EFM
+Zusatz1X3: 
+
+
+TripInfoUX: Ja
+CleaningUX: 
+CleaningTelUX: 00 
+FuelUX: 
+FuelTelUX: 00 
+StationUX: 
+StationTelUX: 00 
+TixTelUX: 00
+TechnikUX: 
+TechnikTelUX: 00 
+CateringUX: 
+CateringTelUX: 00 
+CargoUX: 
+CargoTelUX: 00 
+ICAOIATAUX: UX/AEA
+LMCUX: 200kg
+PushbackUX: aerogate
+Zusatz1UX: 
+
+
+TripInfoLY: nur Block 
+CleaningLY: Heico
+CleaningTelLY: 96991
+FuelLY: AFS
+FuelTelLY: 90910
+StationLY: Eddi Tsadok Zoellig
+StationTelLY: 91700
+TixTelLY: 
+TechnikLY: 
+TechnikTelLY: 00 
+CateringLY: Gate Gourmet
+CateringTelLY: 93424
+CargoLY: LUG
+CargoTelLY: 96033
+ICAOIATALY: LY/ELY
+LMCLY: 200kg
+PushbackLY: aerogate
+Zusatz1LY: 
+
+
+TripInfoTK: Ja
+CleaningTK: 
+CleaningTelTK: 00 
+FuelTK: 
+FuelTelTK: 00 
+StationTK: 
+StationTelTK: 00 
+TixTelTK: 00
+TechnikTK: 
+TechnikTelTK: 00 
+CateringTK: 
+CateringTelTK: 00 
+CargoTK: 
+CargoTelTK: 00 
+ICAOIATATK: TK/THY
+LMCTK: 200kg
+PushbackTK: EFM
+Zusatz1TK: 
+
+
+TripInfoWY: 
+CleaningWY: 
+CleaningTelWY: 00 
+FuelWY: 
+FuelTelWY: 00 
+StationWY: 
+StationTelWY: 00 
+TixTelWY: 00
+TechnikWY: 
+TechnikTelWY: 00 
+CateringWY: 
+CateringTelWY: 00 
+CargoWY: 
+CargoTelWY: 00 
+ICAOIATAWY: WY/OAS
+LMCWY: 200kg
+PushbackWY: 
+Zusatz1WY: 
+
+
+TripInfoDL: Nein 
+CleaningDL: 
+CleaningTelDL: 00 
+FuelDL: 
+FuelTelDL: 00 
+StationDL: 
+StationTelDL: 00 
+TixTelDL: 00
+TechnikDL: 
+TechnikTelDL: 00 
+CateringDL: 
+CateringTelDL: 00 
+CargoDL: 
+CargoTelDL: 00 
+ICAOIATADL: DL/DLA
+LMCDL: 200kg
+PushbackDL: aerogate 
+Zusatz1DL: 
+
+
+TripInfoSV: Ja
+CleaningSV: 
+CleaningTelSV: 00 
+FuelSV: 
+FuelTelSV: 00 
+StationSV: 
+StationTelSV: 00 
+TixTelSV: 00
+TechnikSV: 
+TechnikTelSV: 00 
+CateringSV: 
+CateringTelSV: 00 
+CargoSV: 
+CargoTelSV: 00 
+ICAOIATASV: SV/SVA
+LMCSV: 200kg
+PushbackSV: aerogate 
+Zusatz1SV: 
+
+
+TripInfoD8: nein
+CleaningD8: nein
+CleaningTelD8: 
+FuelD8: SKY
+FuelTelD8: 97264
+StationD8: 
+StationTelD8: 
+TixTelD8: 
+TechnikD8: 
+TechnikTelD8: 
+CateringD8: 
+CateringTelD8: 
+CargoD8: Swissport
+CargoTelD8: 94220
+ICAOIATAD8: DY/D8/NAX
+LMCD8: 
+PushbackD8: aerogate 
+Zusatz1D8: 
+
+
+TripInfoGQ: 
+CleaningGQ: 
+CleaningTelGQ: 00 
+FuelGQ: 
+FuelTelGQ: 00 
+StationGQ: 
+StationTelGQ: 00 
+TixTelGQ: 00
+TechnikGQ: 
+TechnikTelGQ: 00 
+CateringGQ: 
+CateringTelGQ: 00 
+CargoGQ: 
+CargoTelGQ: 00 
+ICAOIATAGQ: GQ/SEH
+LMCGQ: 200kg
+PushbackGQ: aerogate 
+Zusatz1GQ: 
+
+
+TripInfoKU: 
+CleaningKU: 
+CleaningTelKU: 00 
+FuelKU: 
+FuelTelKU: 00 
+StationKU: 
+StationTelKU: 00 
+TixTelKU: 00
+TechnikKU: 
+TechnikTelKU: 00 
+CateringKU: 
+CateringTelKU: 00 
+CargoKU: 
+CargoTelKU: 00 
+ICAOIATAKU: KU/KAC
+LMCKU: 200kg
+PushbackKU: aerogate 
+Zusatz1KU: 
+
+
+TripInfoAZ: 
+CleaningAZ: 
+CleaningTelAZ: 00 
+FuelAZ: AFS
+FuelTelAZ: 90910
+StationAZ: Donatella 
+StationTelAZ: 00 
+TixTelAZ: 00
+TechnikAZ: ITA
+TechnikTelAZ: 
+CateringAZ: 
+CateringTelAZ: 00 
+CargoAZ: 
+CargoTelAZ: 00 
+ICAOIATAAZ: AZM/ITY
+LMCAZ: 200kg
+PushbackAZ: EFM
+Zusatz1AZ: 
+
+
+TripInfoUD: 
+CleaningUD: 
+CleaningTelUD: 00 
+FuelUD: 
+FuelTelUD: 00 
+StationUD: 
+StationTelUD: 00 
+TixTelUD: 00
+TechnikUD: 
+TechnikTelUD: 00 
+CateringUD: 
+CateringTelUD: 00 
+CargoUD: 
+CargoTelUD: 00 
+ICAOIATAUD: UD/-
+LMCUD: 200kg
+PushbackUD: aerogate 
+Zusatz1UD: 
+
+
+TripInfoAH: 
+CleaningAH: 
+CleaningTelAH: 00 
+FuelAH: 
+FuelTelAH: 00 
+StationAH: 
+StationTelAH: 00 
+TixTelAH: 00
+TechnikAH: 
+TechnikTelAH: 00 
+CateringAH: 
+CateringTelAH: 00 
+CargoAH: 
+CargoTelAH: 00 
+ICAOIATAAH: AH/-
+LMCAH: 200kg
+PushbackAH: aerogate
+Zusatz1AH: 
+
+
+TripInfoSZ: 
+CleaningSZ: 
+CleaningTelSZ: 00 
+FuelSZ: 
+FuelTelSZ: 00 
+StationSZ: 
+StationTelSZ: 00 
+TixTelSZ: 00
+TechnikSZ: 
+TechnikTelSZ: 00 
+CateringSZ: 
+CateringTelSZ: 00 
+CargoSZ: 
+CargoTelSZ: 00 
+ICAOIATASZ: SZ/SMR
+LMCSZ: 200kg
+PushbackSZ: 
+Zusatz1SZ: 
+
+
+TripInfoA9: 
+CleaningA9: 
+CleaningTelA9: 00 
+FuelA9: 
+FuelTelA9: 00 
+StationA9: 
+StationTelA9: 00 
+TixTelA9: 00
+TechnikA9: 
+TechnikTelA9: 00 
+CateringA9: 
+CateringTelA9: 00 
+CargoA9: 
+CargoTelA9: 00 
+ICAOIATAA9: A9/TGZ
+LMCA9: 200kg
+PushbackA9: 
+Zusatz1A9: 
+
+TripInfoIV: Ja
+CleaningIV: Heico
+CleaningTelIV: 0
+FuelIV: AFS
+FuelTelIV: 0
+StationIV: Nein
+StationTelIV: 0
+TixTelIV: 0
+TechnikIV: ? 
+TechnikTelIV: 0
+CateringIV: DO&CO
+CateringTelIV: 0
+CargoIV: Nein
+CargoTelIV: 0
+ICAOIATAIV: IV 
+LMCIV: 0
+PushbackIV: aerogate 
+zusatz1IV: N
+
+TripInfoSR: 
+CleaningSR: 
+CleaningTelSR: 00 
+FuelSR: 
+FuelTelSR: 00 
+StationSR: 
+StationTelSR: 00 
+TixTelSR: 00
+TechnikSR: 
+TechnikTelSR: 00 
+CateringSR: 
+CateringTelSR: 00 
+CargoSR: 
+CargoTelSR: 00 
+ICAOIATASR: SR/SRD
+LMCSR: 200kg
+PushbackSR: aerogate 
+Zusatz1SR: 
+
+
+TripInfoBAE: Nein 
+CleaningBAE: nein 
+CleaningTelBAE: 
+FuelBAE: 
+FuelTelBAE: 00 
+StationBAE: 
+StationTelBAE: 00 
+TixTelBAE: 00
+TechnikBAE: 
+TechnikTelBAE: 00 
+CateringBAE: Gate Gourmet 
+CateringTelBAE: 93424
+CargoBAE: 
+CargoTelBAE: 
+ICAOIATABAE: -/BAE
+LMCBAE: 
+PushbackBAE: aerogate 
+Zusatz1BAE: 
+
+
+TripInfoGF:  
+CleaningGF:  
+CleaningTelGF:  
+FuelGF: 
+FuelTelGF:  
+StationGF: 
+StationTelGF: 
+TixTelGF:  
+TechnikGF: 
+TechnikTelGF:  
+CateringGF:  
+CateringTelGF: 
+CargoGF:  
+CargoTelGF:  
+ICAOIATAGF: GF/GFA
+LMCGF:  
+PushbackGF:  
+Zusatz1GF: 
+
+
+TripInfo3V: Ja 
+Cleaning3V: nein
+CleaningTel3V: 
+Fuel3V: 
+FuelTel3V: 00 
+Station3V: 
+StationTel3V: 
+TixTel3V: nein
+Technik3V: 
+TechnikTel3V: 00 
+Catering3V: nein
+CateringTel3V: 
+Cargo3V: 
+CargoTel3V: 00 
+ICAOIATA3V: 3V/TNT
+LMC3V: 200kg
+Pushback3V: aerogate 
+Zusatz13V: 
+
+
+
+
+
+
+

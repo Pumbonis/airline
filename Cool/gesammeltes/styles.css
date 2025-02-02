@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  margin: 0;
+  font-size: clamp(0.5rem, 3.5vw, 8rem);
+  
+}
+
+.box {
+  background: rebeccapurple;
+  width: 100px;
+  height: 100px;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+/*  grid-template-columns: repeat(autofit, minmax(100px,1fr));*/
+}
+/*.main {
+  flex-grow: 1;
+}*/
+
+/*@media (min-width: 200px) {
+  .box {
+    background: red;
+  }
+}
+*/
+
+@media (100px <= width <= 400px) {
+  .box {
+    background: red;
+  }
+}
+
+
+
+/*@media (orientation: landscape) {
+  .box {
+    background: red;
+  }
+}
+*/
+
+/*@media (orientation: landscape) {
+  .box {
+    width: 50px;
+    height: 50px;
+  }
+}
+*/
+
+/*.sidebar {
+  width: 30%;
+  border-left: 1px solid black;
+}
+*/

@@ -1,0 +1,316 @@
+ /*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+*/
+
+table {
+  border-collapse: collapse;
+  margin-left: 50px;
+  margin-right: auto;
+  max-width: 75%;
+  width: 70%; 
+  border: 1px solid black;
+ 
+
+ 	position: relative;
+	padding-left:50px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+
+html, body, div, object, iframe, h1, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, .is-label, header, footer, nav, section, figure {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.col-xs-12 {
+    position: relative;
+    min-height: 10px;
+    padding-left: 50px; //war beides 10
+    padding-right: 50px;
+}
+
+h1, h2, h3{
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.connector-bar {
+    background-color: #66CCFF;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.connector-bar-inner {
+    background-color: #006699;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: -98px;
+    transform: skew(-27deg);
+    position: absolute;
+}
+
+.container-fluid.layout-container, .layout-container {
+    padding: 0;
+}
+
+
+.layout-row {
+    margin: 0;
+}
+
+.col-xs-12 {
+    width: 70%;
+}
+
+.gesendet-klein {
+	width: 50%;
+}
+
+
+a, .alpha {
+	text-decoration: none;
+    font-weight: normal;
+    font-size: 1.00rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+a:before, .alpha:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h1, .alpha {
+   /* font-weight: normal;*/
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+        font-weight: bold;
+        background-color: lightgreen;
+}
+
+
+h1:before, .alpha:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h2, .alpha {
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+h2:before, .alpha:before {
+    content: "delta/";
+    position: relative;
+    top: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h3, .alpha {
+position: absolute ;
+bottom: 0;
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+h3:before, .alpha:before {
+    content: "MAC@";
+    position: relative ;
+    bottom: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+
+
+.bg-highlight {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    color: #fff;
+}
+
+
+.mb15 {
+    margin-bottom: 15px !important;
+}
+
+
+block-text-module *:last-child {
+    margin-bottom: 0;
+    left: 50px;
+}
+
+div.text, .table-container {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+/* input styles */
+  input[type="number"], input[type="text"] {
+       width: 100%;
+       padding: 8px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+}
+
+.tankNo {
+   width: 4em; /* ensure the input field is displayed as four characters long */
+}
+
+.actualDepartureFuel {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE design....*/
+
+
+#belegNr, #litres, #gallonsPumped, #equalsPoundsAdded, #totalActualPoundsOnBoard  {
+     font-weight: bold;
+     background-color: lightgreen;
+}
+
+
+/* aus dem original File */
+
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h2 {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 50px;
+    margin-right: auto;
+    max-width: 75%;
+    width: 70%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[id="flight"] {
+    width: 4em;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+.tankNo {
+    width: 4em;
+}
+
+.actualDepartureFuel {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+
+    input[type="number"], input[type="text"] {
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 2px;
+    }
+
+    input[type="number"], input[type="text"] {
+        padding: 20px;
+    }
+}
+
+#belegNr, #litres, #gallonsPumped, #equalsPoundsAdded, #totalActualPoundsOnBoard {
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+#actualDepartureFuel {
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+
+
+

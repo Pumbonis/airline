@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox-Überprüfung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+        }
+        .print-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checkbox-Überprüfung</h1>
+        <div class="checkbox-group">
+            <label><input type="checkbox" class="checkbox"> Checkbox 1</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 2</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 3</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 4</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 5</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 6</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 7</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 8</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 9</label>
+            <label><input type="checkbox" class="checkbox"> Checkbox 10</label>
+        </div>
+        <button class="print-button" onclick="generatePDF()">PDF generieren</button>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            let allChecked = true;
+
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.checked) {
+                    allChecked = false;
+                }
+            });
+
+            if (allChecked) {
+                window.location.href = 'generate_pdf.php';
+            } else {
+                alert('Bitte markieren Sie alle Checkboxen, bevor Sie das PDF generieren.');
+            }
+        }
+    </script>
+</body>
+</html>

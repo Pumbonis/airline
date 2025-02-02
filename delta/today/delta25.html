@@ -1,0 +1,126 @@
+<html lang="de" dir="ltr">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Delta 25 Jan 31</title>
+    <link rel="stylesheet" href="../styles_dl.css">
+    
+    </head>
+    <body>
+    
+    <!-- Navigationsleiste -->
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="../../">Airline-Info</a></li>
+                <li><a href="#noch">TRC Checksheet dauert noch</a></li>
+                <li><a href="../trc-checklist2.php">DL Checksheet</a></li>
+                <li><a href="../fueling-sheet-edit.php">DL Fuel</a></li>
+                <li><a href="#">DL Fuel WB</a></li>
+                <li><a href="../../QR/QR-modul.php">QR Container</a></li>
+                <li><a href="../../QR/QR-modul-wb.php">QR Container WB</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Navigationsleiste -->
+    
+    <div class="container-dl-top">
+    <h2 id="flight-nr">DL25 - Jan 31</h2>
+
+    <div class="connector-bar">
+    <div class="connector-bar-inner"></div>
+</div>
+
+<div class="col-sm-4 bg-highlight">
+
+    <table border="1">
+        <tr>
+            <th>Tank No.</th>
+            <th>Requested Departure Fuel</th>
+            <th>Actual Departure Fuel</th>
+            <th>Actual Arrival Fuel</th>
+        </tr><tr>
+            <td>LM</td>
+            <td></td>
+            <td id="actualDepartureFuel"></td>
+            <td></td>
+        </tr><tr>
+            <td>RM</td>
+            <td></td>
+            <td id="actualDepartureFuel"></td>
+            <td></td>
+        </tr><tr>
+            <td>CA</td>
+            <td></td>
+            <td id="actualDepartureFuel"></td>
+            <td></td>
+        </tr><tr>
+            <td>.</td>
+            <td></td>
+            <td id="actualDepartureFuel"></td>
+            <td></td>
+        </tr><tr>
+            <td>..</td>
+            <td></td>
+            <td id="actualDepartureFuel"></td>
+            <td></td>
+        </tr></table>
+    <table border="1" id="output">
+        <tr>
+            <td>Beleg Nr.</td>
+            <td id="belegNr"></td>
+        </tr>
+        <tr>
+            <td>Litres</td>
+            <td id="litres"></td>
+        </tr>
+        <tr>
+            <td>Gallons Pumped</td>
+            <td id="gallonsPumped">0</td>
+        </tr>
+        <tr>
+            <td>Total Dispatch Pounds</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Total actual pounds on board</td>
+            <td id="totalActualPoundsOnBoard">0</td>
+        </tr>
+        <tr>
+            <td>Subtract total pounds on arrival</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Equals pounds added</td>
+            <td id="equalsPoundsAdded">0</td>
+        </tr>
+        <tr>
+            <td>Divided by actual fuel density LBS/GAL</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Equals calculated gallons added</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Subtract total gallons pumped</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Equals difference</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Allowable difference (tolerance)</td>
+            <td></td>
+        </tr>
+    </table>
+    </div>
+       <div class="connector-bar">
+    <div class="connector-bar-inner"></div>
+</div>
+    </div>    </div>
+    </body>
+    </html>

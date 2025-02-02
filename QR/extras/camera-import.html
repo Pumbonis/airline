@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Input Form</title>
+</head>
+<body>
+    <form id="cameraForm">
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="capture">Capture</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <input type="hidden" id="imageData" name="imageData">
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // Get the video, canvas, and form elements
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const cameraForm = document.getElementById('cameraForm');
+        const imageDataInput = document.getElementById('imageData');
+
+        // Access the user's camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function(err) {
+                console.log('Error: ' + err);
+            });
+
+        // Capture an image when the user clicks the button
+        document.getElementById('capture').addEventListener('click', function() {
+            context.drawImage(video, 0, 0, 640, 480);
+            const imageData = canvas.toDataURL('image/jpeg');
+            imageDataInput.value = imageData;
+        });
+
+        // Submit the form with the captured image data
+        cameraForm.addEventListener('submit', function(event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+
+            // Send the form data with AJAX
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/submit-form');
+            xhr.send(new FormData(cameraForm));
+        });
+    </script>
+</body>
+</html>

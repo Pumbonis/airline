@@ -1,0 +1,173 @@
+TripInfoUX: nein
+CleaningUX: Heico (Müll holen)
+CleaningTelUX: 90990
+FuelUX: AFS
+FuelTelUX: 90910
+StationUX: Valentin
+StationTelUX: 0
+HoldsearchUX: nein
+TechnikUX: NAYAK
+TechnikTelUX: 01703760823
+CateringUX: nein
+CateringTelUX: 0
+CargoUX: Cargogate
+CargoTelUX: 92284
+ICAOIATAUX: UX/AEA
+LMCUX: ja
+PushbackUX: aerogate
+zusatz1UX: 0
+
+TripInfoAZ: Block Fuel
+CleaningAZ: Heico
+CleaningTelAZ: 96990
+FuelAZ: AFS
+FuelTelAZ: 90910
+StationAZ: Donatella Weiss
+StationTelAZ: 016093992790
+HoldsearchAZ: nein
+TechnikAZ: AZ-Technik
+TechnikTelAZ: 91180
+CateringAZ: Gate Gourmet (via Stn.)
+CateringTelAZ: 93424
+CargoAZ: Swissport
+CargoTelAZ: 94220
+ICAOIATAAZ: AZ/ITY
+LMCAZ: 0
+PushbackAZ: Singleman
+zusatz1AZ: BVD: SWP
+
+TripInfoAH: JA
+CleaningAH: NEIN
+CleaningTelAH: G
+FuelAH: AFS
+FuelTelAH: 90910
+StationAH: 0
+StationTelAH: 0
+HoldsearchAH: nein
+TechnikAH: 0
+TechnikTelAH: 0
+CateringAH: 0
+CateringTelAH: 0
+CargoAH: Cargogate
+CargoTelAH: 92289
+ICAOIATAAH: AH
+LMCAH: 0
+PushbackAH: aerogate
+zusatz1AH: 0
+
+TripInfoQR: Nein 
+CleaningQR: Camso
+CleaningTelQR: 84000  
+FuelQR: AFS 
+FuelTelQR: 90910  
+StationQR:  
+StationTelQR: 92583 
+HoldsearchQR: JA - Plus Fotos 
+TechnikQR: FLTechnics
+TechnikTelQR: 0037065103643
+CateringQR: DO&CO 
+CateringTelQR: 98021 
+CargoQR: Swissport 
+CargoTelQR: 94220 
+ICAOIATAQR: QR 
+LMCQR: None
+PushbackQR: FLTechnics
+zusatz1QR: Anzahl Decken / Catering / Wasserqty.
+
+TripInfoIV: Ja
+CleaningIV: Heico
+CleaningTelIV: 0
+FuelIV: AFS
+FuelTelIV: 0
+StationIV: Nein
+StationTelIV: 0
+TixTelIV: 0
+TechnikIV: ? 
+TechnikTelIV: 0
+CateringIV: DO&CO
+CateringTelIV: 0
+CargoIV: Nein
+CargoTelIV: 0
+ICAOIATAIV: IV 
+LMCIV: 0
+PushbackIV: aerogate 
+zusatz1IV: N
+
+TripInfoBAE: Ja
+CleaningBAE: C
+CleaningTelBAE:  
+FuelBAE:   
+FuelTelBAE:  
+StationBAE: Nein
+StationTelBAE:  
+TixTelBAE:  
+TechnikBAE:  
+TechnikTelBAE:  
+CateringBAE: ACM
+CateringTelBAE:  
+CargoBAE:  
+CargoTelBAE:  
+ICAOIATABAE: BAE
+LMCBAE: 0
+PushbackBAE: aerogate
+zusatz1BAE:  
+
+TripInfoFL: Ja
+CleaningFL: Ja
+CleaningTelFL: 0
+FuelFL: Ja
+FuelTelFL: 0
+StationFL: Ja
+StationTelFL: 0
+TixTelFL: 0
+TechnikFL: Ja
+TechnikTelFL: 0
+CateringFL: Ja
+CateringTelFL: 0
+CargoFL: Ja
+CargoTelFL: 0
+ICAOIATAFL: FL/
+LMCFL: Ja
+PushbackFL: aerogate 
+zusatz1FL: Nix
+
+TripInfoBR: Ja
+CleaningBR: Ja
+CleaningTelBR: 0
+FuelBR: Ja
+FuelTelBR: 0
+StationBR: Ja
+StationTelBR: 0
+TixTelBR: 0
+TechnikBR: Ja
+TechnikTelBR: 0
+CateringBR: Ja
+CateringTelBR: 0
+CargoBR: Ja
+CargoTelBR: 0
+ICAOIATABR: BR/EVA
+LMCBR: Ja
+PushbackBR: Ja
+zusatz1BR: Nix
+
+TripInfoGQ: Ja
+CleaningGQ: HEICO
+CleaningTelGQ: 96990
+FuelGQ: AFS
+FuelTelGQ: 90910
+StationGQ: Ioannis Vrettos
+StationTelGQ: +30 697 911 0239
+HoldsearchGQ: NO
+TechnikGQ: NAYAK on req. via GQ-HQ
+TechnikTelGQ: 0
+CateringGQ: No
+CateringTelGQ: 0
+CargoGQ: No
+CargoTelGQ: 0
+ICAOIATAGQ: GQ/SEH
+LMCGQ: No
+PushbackGQ: Ja
+zusatz1GQ: Handling Aviapartner
+
+
+zusatz1BR: Nix 

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Textfelder speichern</title>
+
+    <style>
+        form {
+            margin: 0 auto;
+            background-color: #fff;
+            position: relative;
+        }
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 120px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid #ccc;
+            transition: all .3s ease;
+            padding: 0 15px;
+        }
+        label {
+            position: absolute;
+            cursor: text;
+            z-index: 2;
+            top: 13px;
+            left: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #fff;
+            padding: 0 10px;
+            color: #999;
+            transition: all .3s ease;
+        }
+        input:focus + label, 
+        input:valid + label {
+            font-size: 11px;
+            top: -6px;
+        }
+        input:focus + label {
+            color: blue;
+        }
+        input:focus {
+            border-color: blue;
+            outline: 1px solid blue;
+										} 
+										.alte_werte {
+															font-family: Verdana, Geneva, sans-serif;
+font-size: 9px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #C5C5C5;
+font-weight: 700;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+ 														margin-top: 5px;
+										} 
+
+
+  
+  /* button*/
+/* neu */
+.bookmarkButn {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.textButn {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkButn:hover .IconContainer {
+  width: 90px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkButn:hover .textButn {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkButn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}
+
+
+    </style>
+<script>
+
+function upperCaseF(a) {
+    a.value = a.value.toUpperCase();
+}
+
+</script>
+<!--
+function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+-->
+</head>
+<body>
+
+<!-- Welche Airline -->
+<div class="input-container">
+<!--
+				<input type="text" id="nameSuffix" name="nameSuffix" maxlength="3" required  oninput="this.value = this.value.toUpperCase()">
+ -->
+<!--
+<input type="text" id="nameSuffix" name="nameSuffix" maxlength="3" required oninput="upperCaseF(this)">
+-->
+		 <input type="text" id="nameSuffix" name="nameSuffix" maxlength="3" required  oninput="this.value = this.value.toUpperCase()"  onchange="loadDataFromFile(this.value)">
+    <label for="nameSuffix">Airline-Suffix:</label>
+</div>
+
+
+    <form id="dataForm" action="save_data.php" method="post">
+
+<div class="input-container">
+<input type="text" id="TripInfo" name="TripInfo" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="TripInfo">TripInfo:</label>
+</div>
+
+
+<div class="input-container">
+<input type="text" id="Cleaning" name="Cleaning" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Cleaning">Cleaning:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="CleaningTel" name="CleaningTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="CleaningTel">Cleaning Tel:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Fuel" name="Fuel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Fuel">Fuel:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="FuelTel" name="FuelTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="FuelTel">Fuel-Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Station" name="Station" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Station">Station:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="StationTel" name="StationTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="StationTel">Station Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="TixTel" name="TixTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="TixTel">Tix Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Technik" name="Technik" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Technik">Technik:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="TechnikTel" name="TechnikTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="TechnikTel">Technik Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Catering" name="Catering" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Catering">Catering:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="CateringTel" name="CateringTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="CateringTel">Catering Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Cargo" name="Cargo" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Cargo">Cargo:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="CargoTel" name="CargoTel" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="CargoTel">Cargo Tel.:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="ICAOIATA" name="ICAOIATA" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="ICAOIATA">ICAO/IATA:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="LMC" name="LMC" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="LMC">LMC Limit:</label>
+</div>
+
+<div class="input-container">
+<input type="text" id="Pushback" name="Pushback" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="Pushback">Pushback:</label>
+</div>
+
+
+<div class="input-container">
+<input type="text" id="zusatz1" name="zusatz1" onChange="addSuffix(this, 'nameSuffix')" required>
+<label for="zusatz1">Zusatz Info1:</label>
+</div>
+
+  <div><br></div>
+  
+  
+  <button class="bookmarkButn" type="submit">
+  <span class="IconContainer">
+    <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+      <path
+        d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+      ></path>
+    </svg>
+  </span>
+  <p class="textButn">Speichern</p>
+</button>
+  
+  
+  <div><br></div>
+
+
+
+<!--
+        <button type="submit">Speichern</button>
+-->
+    </form>
+
+<script>
+					function addSuffix(input, suffixFieldName) {
+    const suffixField = document.getElementsByName(suffixFieldName)[0];
+    const suffix = suffixField.value;
+    
+    // Überprüfen, ob das Suffix bereits im Namen enthalten ist
+    if (!input.name.endsWith(suffix)) {
+        // Suffix nur anhängen, wenn es nicht bereits vorhanden ist
+        input.name += suffix;
+    }
+}
+
+</script>
+<!-- lädt Werte aus txt -->
+<script>
+function loadDataFromFile(suffix) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'daten.txt', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = xhr.responseText.split('\n');
+            for (let line of data) {
+                const [key, value] = line.split(':');
+                if (key.endsWith(suffix)) {
+                    const inputField = document.getElementById(key.replace(suffix, ''));
+                    if (inputField) {
+                        const valueContainer = document.createElement('div');
+                        valueContainer.textContent = value;
+                        valueContainer.classList.add('alte_werte');
+                        const labelElement = inputField.parentNode.querySelector('label');
+                        if (labelElement) {
+                            inputField.parentNode.insertBefore(valueContainer, labelElement.nextSibling); // Hier wird das div-Element hinter dem label-Element eingefügt
+                        } else {
+                            inputField.parentNode.appendChild(valueContainer);
+                        }
+                    }
+                }
+            }
+        }
+    };
+    xhr.send();
+}
+</script>
+
+
+
+
+
+</body>
+</html>

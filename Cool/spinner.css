@@ -1,0 +1,14 @@
+
+#dspinner {
+    width: 65px;
+    aspect-ratio: 1/1;
+    border: 7px solid;
+    border-radius: 50%;
+    border-color: black transparent forestgreen transparent ;
+    animation: rotate  4.7s linear infinite;
+    align-content: center;
+    
+  }
+  @keyframes rotate {
+    to { transform: rotate(360deg)}
+  }

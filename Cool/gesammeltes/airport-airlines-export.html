@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <div>
+        <div>
+            <table id="mainTable">
+                <thead>
+                    <tr>
+                        <th>Airline Code</th>
+                        <th>3-letter Code</th>
+                        <th>Name</th>
+                        <!-- Other columns... -->
+                        <th>Export</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows with export buttons... -->
+                    <tr>
+                        <td>RJ</td>
+                        <td>RJA</td>
+                        <td>Royal Jordanian</td>
+                        <!-- Other columns... -->
+                        <td>
+                            <button class="exportButton">Export</button>
+                        </td>
+                    </tr>
+                    <!-- More rows... -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Add event listeners to the export buttons
+        document.querySelectorAll('.exportButton').forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Get the row the button is in
+                var row = button.parentElement.parentElement;
+                // Get the cells of the row
+                var cells = row.getElementsByTagName('td');
+                // Get the content of the first cell
+                var airlineCode = cells[0].textContent;
+                // Create a new table
+                var newTable = document.createElement('table');
+                // Copy the structure of the main table to the new table
+                newTable.innerHTML = document.getElementById('mainTable').innerHTML;
+                // Remove the last column of the new table (the export buttons)
+                newTable.deleteRow(-1);
+                // Create a new row and add it to the new table
+                var newRow = newTable.insertRow(-1);
+                // Copy the cells of the original row to the new row
+                for (var i = 0; i < cells.length - 1; i++) {
+                    var newCell = newRow.insertCell(-1);
+                    newCell.innerHTML = cells[i].innerHTML;
+                }
+                // Save the new table in a new HTML file
+                var blob = new Blob([newTable.outerHTML], {type: 'text/html'});
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = airlineCode + '.html';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>

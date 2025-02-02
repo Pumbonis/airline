@@ -1,0 +1,481 @@
+@import url('/fonts/dyna.css');
+
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box; 
+font-family: sans-serif;
+}
+
+body {
+display: flex;
+justify-content: center;
+height: 100%;
+background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+z-index: 1;
+/*align-items: top;*/
+/*background: #F7E7EC;*/
+/*cursor: url("/ico/newarrow-new-inv.ico"), wait;*/
+}
+
+html, div, object, iframe, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, .is-label, header, footer, nav, section, figure {
+    /*margin: 0;
+    padding: 0;
+    font-size: 1.0rem; war 16px */ 
+    /*line-height: 1.5;*/
+}
+
+.container-dl-top {
+    width: 100%;
+    position: absolute;
+    /*transform: translateY(-10%);
+    /* top: 0;*/
+    /*margin: 2px;*/
+    margin-top: 60px; /* Anpassen nach der Höhe der Navigationsleiste */
+    z-index: 1;
+}
+.container-dl {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin: 2px;*/
+    /*margin-top: 9px; /* Anpassen nach der Höhe der Navigationsleiste */
+    z-index: 1;
+}
+.container-dl-wb {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin: 2px;*/
+    margin-top: 90px; /* Anpassen nach der Höhe der Navigationsleiste */
+    z-index: 1;
+}
+
+
+table {
+    background-color: red;/*#66CCFF;*/
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+    width: 70%; 
+    border: 1px solid black;
+    position: relative;
+    padding-left:50px;
+}
+
+th, td {
+    background-color: #66CCFF;
+    text-align: left;
+    padding: 6px;
+    border: 1px solid black;
+} 
+
+h1, h2, h3{
+    margin: 10px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    font-size: 25px;
+}
+
+.bg-highlight {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    color: #fff;
+}
+
+.col-sm-4, col-sm-6 {
+    position: relative;
+    min-height: 1px;
+}
+
+.connector-bar {
+    background-color: #252940; /*#66CCFF; */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.connector-bar-inner {
+    background-color: #c0c3f0; /*#006699;*/
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: -98px;
+    transform: skew(-27deg);
+    position: absolute;
+}
+
+.calltext {
+    text-decoration: none;
+    font-size: 0.70em;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+a, .alpha {
+  	text-decoration: none;
+    font-weight: bold;
+    font-size: 1.00em;
+/*    line-height: 1.2;*/
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+a:before, .alpha:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h1 {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    margin: 10px;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.30rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+    /* background-color: lightgreen;*/
+}
+
+
+h1:before {
+    content: "/ ";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h2 {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: 'DynaPuff', sans-serif;
+    /*font-family: "map-regular", arial, helvetica, sans-serif;*/
+}
+
+
+h2:before {
+    content: "delta/ ";
+    position: relative;
+    top: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h2:after {
+    content: " © by MAC";
+    position: relative;
+    top: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    font-size: .70rem;
+    margin-right: 0.063em;
+    color: #6cf; //#0099CC;
+   } 
+
+h3 {
+position: absolute ;
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+h3:before {
+    content: "MAC@";
+    position: relative ;
+    bottom: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+.bg-highlight {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    color: #fff;
+}
+
+
+div.text, .table-container {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+
+/* input styles */
+  input[type="number"], input[type="text"] {
+       width: 100%;
+       padding: 8px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+}
+
+.tankNo {
+   width: 4em; /* ensure the input field is displayed as four characters long */
+}
+
+.actualDepartureFuel {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE design....*/
+
+
+#belegNr, #litres, #gallonsPumped, #equalsPoundsAdded, #totalActualPoundsOnBoard, #actualDepartureFuel  {
+     font-weight: bold;
+     background-color: lightgreen;
+}
+
+
+
+/* aus dem original File */
+
+/* Global styles */
+
+
+input[id="flight"] {
+    width: 4em;
+    color: black;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+
+
+
+@media (max-width: 768px) {
+.container-dl-wb {
+    width: 90%;
+    height: 20%;
+}
+
+
+    table {
+        font-size: 14px;
+    }
+
+
+    input[type="number"], input[type="text"] {
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+
+    input[type="number"], input[type="text"] {
+        padding: 2px;
+    }
+}
+
+
+
+
+#output td:nth-child(2) {
+    width: 6em;
+}
+
+#flight-nr {
+   color: #fff;
+} 
+
+
+
+
+
+
+
+
+
+
+.container-fluid.layout-container, .layout-container {
+    padding: 0;
+}
+
+
+.layout-row {
+    margin: 0;
+}
+
+.col-xs-12 {
+    width: 70%;
+}
+
+.gesendet-klein {
+	width: 50%;
+}
+
+.col-xs-12 {
+    position: relative;
+    min-height: 10px;
+    padding-left: 50px; //war beides 10
+    padding-right: 50px;
+}
+
+
+
+
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 0.95rem; 
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'DynaPuff', sans-serif;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    font-family: 'DynaPuff', sans-serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar-menu li a:hover {
+    background-color: #555;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-menu li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        font-size: 0.85rem; 
+    }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* war 100% */
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Unterhalb der Navbar */
+        left: 0;
+        /*z-index: 1000; /* Stelle sicher, dass das Menü über anderen Inhalten liegt */
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .navbar-menu li {
+        text-align: left; /* war center */
+    }
+
+    .navbar-menu li a {
+        padding: 15px 15px;
+        display: block;
+    }
+
+    .dropdown {
+        display: none; /* Dropdown-Menüs standardmäßig ausblenden */
+        background-color: #444; /* Leicht abweichende Farbe für Unterscheidung */
+        position: relative;
+        left: 30px;
+    }
+
+    .navbar-menu li.active .dropdown {
+        display: block; /* Dropdown-Menü anzeigen, wenn das übergeordnete Element aktiv ist */
+    }
+
+    .navbar-toggle {
+        display: flex;
+        z-index: 1000;
+    }
+}

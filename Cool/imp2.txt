@@ -1,0 +1,45 @@
+Heico: 65432
+
+TripInfoEK: ja
+CleaningEK: heico
+CleaningTelEK: 12345
+FuelEK: Sky
+StationEK: Joachim Sobottka-Rogalla
+TicketEK: 92542
+TechnikEK: AZ
+CateringEK: DO&CO
+CargoEK: EK
+ICAOIATAEK: UAE/EK
+LMCEK: 3000kg - 5000kg
+PushbackEK: AZ
+
+
+TripInfoQR: Nein
+CleaningQR: camso
+FuelQR: AFS
+StationQR: Björn
+TicketQR: 0815
+TechnikQR: FLTechnics
+CateringQR: DO&CO
+CargoQR: Swissport 
+ICAOIATAQR: QR 
+LMCQR: 3000kg - 5000kg
+PushbackQR: FLTechnics
+
+
+TripInfoX3: Ja
+CleaningX3: Wieprecht
+FuelX3: AFS
+StationX3: Severin Siebert
+TicketX3: 0815
+TechnikX3: NAYAK
+CateringX3: DO&CO
+CargoX3: Swissport 
+ICAOIATAX3: X3 
+LMCX3: 200kg
+PushbackX3: EFM
+
+
+
+
+

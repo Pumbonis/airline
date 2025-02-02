@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+        body {
+            font-family: 'Roboto', sans-serif;
+
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        a {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: underline;
+            color: #fff;
+            text-decoration-style: wavy;
+            /* dotted | dashed | solid | double | groove | ridge | inset | wavy | outset */
+            text-underline-offset: 0.3em;
+            text-decoration-thickness: 0.5px;
+            letter-spacing: 1.2px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        summary::before {
+            content: "Nummern anzeigen";
+        }
+
+
+        /* last */
+
+        h1 {
+            font-size: 24px;
+            color: #fff;
+            background: #012B39;
+            border-radius: 0.35em;
+            padding: 0 2em 0 5em;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-align: left;
+            /*margin-left: 0.65em;*/
+            margin-bottom: 5px;
+            width: 90%;
+        }
+
+
+        .what {
+            content: "";
+            /* Leerzeichen, da wir keinen Text mehr anzeigen */
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 2.2em;
+            /* Breite des Bildes */
+            height: 0.8em;
+            /* Höhe des Bildes */
+            background-size: contain;
+            /* Bild skalieren */
+            background-repeat: no-repeat;
+            /* Bild nicht wiederholen */
+            display: inline-block;
+            /* Damit die Größenangaben funktionieren */
+            margin-left: 1em;
+            /* Fügt etwas Abstand zwischen dem Bild und dem Text hinzu */
+        }
+        
+        
+        .h1-with-image {
+            display: flex;
+            /* Verwendet Flexbox für die Anordnung */
+            align-items: center;
+            /* Zentriert die Elemente vertikal */
+            width: 90%;
+        }
+
+        /* Lösung für immer das gleiche Bild vor h1
+        h1:before {
+            content: "";
+            /* Leerzeichen, da wir keinen Text mehr anzeigen //
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 2.2em;
+            /* Breite des Bildes //
+            height: 0.8em;
+            /* Höhe des Bildes //
+            margin-right: 0.063em;
+            background-image: url('img/EFM.png');
+            /* Pfad zum Bild //
+            background-size: contain;
+            /* Bild skalieren //
+            background-repeat: no-repeat;
+            /* Bild nicht wiederholen //
+            display: inline-block;
+            /* Damit die Größenangaben funktionieren
+        }
+        /* original before und after mit '/'
+        h1:before {
+            content: "/";
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 28px;
+            margin-right: 0.063em;
+            color: #0099CC;
+        }
+        h1:after {
+            content: "/";
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 28px;
+            margin-right: 0.063em;
+            color: #0099CC;
+        }
+*/
+
+        .sumsum {
+            font-size: 16px;
+            color: #012B39;
+            /* zum testen background-color: black; */
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1px;
+            /* war 15 */
+            width: 90%;
+        }
+
+
+        table {
+            width: 90%;
+            background: #012B39;
+            border-radius: 0.55em;
+            border-collapse: collapse;
+            margin: 0.1em;
+            /* Abstand Header*/
+            table-layout: fixed;
+        }
+        .tbl-header {
+            font-size: 0.85em;
+            font-weight: 600;
+            padding: 0 0.5em 0 0;
+            text-align: left;
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        .tbl-content {
+            padding: 0 0.5em 0 0;
+            height: auto;
+            /* 250px */
+            overflow-x: auto;
+            margin-top: 0px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        th {
+            padding: 1.3em 1em;
+            text-align: left;
+            font-weight: 500;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 0.65em 1em;
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 300;
+            font-size: 12px;
+            color: #fff;
+            border-bottom: solid 1px rgba(255,255,255,0.1);
+        }
+
+        .left-td {
+            width: 40%;
+            overflow-x: auto;
+
+        }
+        tbody tr:hover {
+            background: #014055;
+        }
+
+
+        section {
+            margin: 5px;
+        }
+
+
+
+        /* for custom scrollbar for webkit browser*/
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+
+
+
+        td.hover01:first-child {
+            border-radius: 0.75em 0 0 0;
+        }
+        td.hover01:last-child {
+            border-radius: 0 0.75em 0 0;
+        }
+
+        td.hover02:first-child {
+            border-radius: 0 0 0 0.75em;
+        }
+        td.hover02:last-child {
+            border-radius: 0 0 0.75em 0;
+        }
+
+
+        /* button*/
+        /* neu */
+        .bookmarkButn {
+            width: 100px;
+            height: 40px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.349);
+            background-color: rgb(12, 12, 12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+        }
+
+        .IconContainer {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 2;
+            transition-duration: 0.3s;
+        }
+
+        .icon {
+            border-radius: 1px;
+        }
+
+        .textButn {
+            height: 100%;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 1;
+            transition-duration: 0.3s;
+            font-size: 1.04em;
+        }
+
+        .bookmarkButn:hover .IconContainer {
+            width: 90px;
+            transition-duration: 0.3s;
+        }
+
+        .bookmarkButn:hover .textButn {
+            transform: translate(10px);
+            width: 0;
+            font-size: 0;
+            transition-duration: 0.3s;
+        }
+
+        .bookmarkButn:active {
+            transform: scale(0.95);
+            transition-duration: 0.3s;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- FMG/EFM -->
+
+    <div class="h1-with-image">
+    <h1>FMG/EFM<img src="img/EFM.png" class="what"></h1>
+    </div>
+    <details>
+        <summary class="sumsum"></summary>
+        <section>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th class="left-td">Funktion</th>
+                            <th>Durchwahl</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="hover01">Verkehrsaufsicht</td>
+                            <td class="hover01"><a href="tel:21121">21121</a></td>
+                        </tr>
+                        <tr>
+                            <td>Betriebsleiter</td>
+                            <td><a href="tel:21212">21212</a></td>
+                        </tr>
+                        <tr>
+                            <td>Betriebsleiter T2</td>
+                            <td><a href="tel:76151">76151</a></td>
+                        </tr>
+                        <tr>
+                            <td>Zentraldispo</td>
+                            <td><a href="tel:21285">21285</a></td>
+                        </tr>
+                        <tr>
+                            <td>Pushback EFM</td>
+                            <td><a href="tel:98677">98677</a></td>
+                        </tr>
+                        <tr>
+                            <td>F&T aeroground</td>
+                            <td><a href="tel:21284">21284</a></td>
+                        </tr>
+                        <tr>
+                            <td>Busdispo</td>
+                            <td><a href="tel:21286">21286</a></td>
+                        </tr>
+                        <tr>
+                            <td>Crewbus</td>
+                            <td><a href="tel:21281">212181</a></td>
+                        </tr>
+                        <tr>
+                            <td>Deicing</td>
+                            <td><a href="tel:98693">98693</a></td>
+                        </tr>
+                        <tr>
+                            <td class="hover02">Winterdienst</td>
+                            <td class="hover02"><a href="tel:51443">51443</a> oder <a href="tel:51444">51444</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </details>
+
+
+    <!-- swissport -->
+    <div class="h1-with-image">
+    <h1>Swissport<img src="img/losch.jpg" class="what"></h1>
+    </div>
+    <details>
+        <summary class="sumsum"></summary>
+        <section>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr
+                            <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- aeroground -->
+<div class="h1-with-image">
+    <h1>aeroground<img src="img/EFM.png" class="what"></h1>
+</div>
+
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- lost&found -->
+<div class="h1-with-image">
+<h1>Lost&Found<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- monitor -->
+<div class="h1-with-image">
+    <h1>Monitor<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Flugsicherung -->
+<div class="h1-with-image">
+    <h1>Flugsicherung<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Tanker -->
+<div class="h1-with-image">
+<h1>Tanker<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Polizei / Zoll -->
+<div class="h1-with-image">
+<h1>Polizei / Zoll<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Feuerwehr -->
+<div class="h1-with-image">
+<h1>Feuerwehr<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Medizinische Dienste -->
+<div class="h1-with-image">
+<h1>Medizin. Dienste<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+<!-- Catering -->
+<div class="h1-with-image">
+<h1>Catering<img src="img/EFM.png" class="what"></h1>
+</div>
+<details>
+    <summary class="sumsum"></summary>
+    <section>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th class="left-td">Funktion</th>
+                        <th>Durchwahl</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="hover01">Betriebsleiter</td>
+                        <td class="hover01">91283</td>
+                    </tr>
+                    <tr>
+                        <td>Gepäck</td>
+                        <td>91285</td>
+                    </tr>
+                    <tr>
+                        <td>F&T</td>
+                        <td>91282</td>
+                    </tr>
+                    <tr>
+                        <td>Loader</td>
+                        <td>91281</td>
+                    </tr>
+                    <tr>
+                        <td class="hover02">Fax</td>
+                        <td class="hover02">91289</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</details>
+
+
+
+<div>
+    <br>
+</div>
+
+
+<button class="bookmarkButn">
+    <span class="IconContainer">
+        <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+            <path
+                d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                ></path>
+        </svg>
+    </span>
+    <p class="textButn">
+        Speichern
+    </p>
+</button>
+
+
+<div>
+    <br>
+</div>
+
+
+</body>
+</html>

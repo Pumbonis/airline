@@ -1,0 +1,581 @@
+@import url('/fonts/dyna.css');
+
+
+*{
+margin: 0px;
+padding: 0px;
+font-family: sans-serif;
+}
+
+body {
+display: flex;
+justify-content: center;
+height: 100%;
+background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+
+/*background: #F7E7EC;*/
+/*align-items: top;*/
+/*cursor: url("/ico/newarrow-new-inv.ico"), wait;*/
+}
+
+html, div, object, iframe, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, .is-label, header, footer, nav, section, figure {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.0rem; //war 16px
+    line-height: 1.5;
+}
+
+
+.container-dl-top {
+    width: 100%;
+    position: absolute;
+    /*transform: translateY(-10%);
+    /* top: 0;*/
+    /*margin: 2px;*/
+    margin-top: 60px; /* Anpassen nach der Höhe der Navigationsleiste */
+}
+
+.container-dl {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin: 2px;*/
+    /*margin-top: 60px; /* Anpassen nach der Höhe der Navigationsleiste */
+}
+.container-dl-wb {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin: 2px;*/
+    margin-top: 90px; /* Anpassen nach der Höhe der Navigationsleiste */
+}
+
+.extrainfo {
+    font-weight: small;
+    font-size: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    height: 1%; /* Stellen Sie sicher, dass der Container eine Höhe hat */
+}
+
+.gespeichertbutton {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    align-items: left;
+    min-width: 15%; /* Setzen Sie hier eine Mindestbreite */
+    height: auto; /* Setzen Sie hier eine feste Höhe */
+    box-sizing: border-box;
+    font-family: 'DynaPuff', sans-serif; /*inherit; /* Verwendet die Schriftart des Elternelements */
+    
+    /* display: inline-flex; */
+    border-radius: 5px;
+    /* font-size: 16px;*/
+    }
+    
+.gespeichertbutton:hover{
+    background-color: #005688; /* Dunklerer Blauton beim Hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Dunklerer Blauton beim Hover */
+}
+
+
+table {
+    position: relative;
+    padding-left: 50px;
+    table-layout: fixed;
+    border: 1px solid black;
+
+}
+
+.akeqke {}
+
+input[type="submit"] {
+    background-color: #006699;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.bild {
+    width: 20px;
+    /* Breite des Bildes */
+    height: 20px;
+    /* Höhe des Bildes */
+    border: none;
+    /* Removes the border */
+    outline: none;
+    /* Removes the outline on focus */
+    object-fit: cover;
+    /* Bildgröße anpassen */
+}
+
+.bild:hover {
+    background-position: 0 -25px;
+}
+
+.bild:focus {
+    outline: none;
+}
+
+.print {
+    /*    background-color: #66CCFF;*/
+    /*    width: 100%;*/
+    left: -30;
+    bottom: 0;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.print:hover {
+    background-position: 0 -25px;
+    box-shadow: 0px 0px 20px rgb(102, 204, 255), /* 171, 166, 166 */
+    0px 0px 36px rgb(80, 195, 236), /* 149, 157, 147 */
+    0px 0px 28px rgb(86, 191, 242), /* 155, 153, 153 */
+    0px 0px 28px rgb(112, 214, 255);
+    /* 181, 176, 176 */
+}
+
+.print:focus {
+    outline: none;
+    /* outline-color: transparent; */
+}
+/* Verkürzung evtl. */
+/*.print:is(:hover, :focus) {
+    box-shadow: 0 0 3px 3px
+} 
+*/
+
+.reload {
+    /*background-color: #006699;*/
+    /*width: 50%;*/
+    height: 2.1rem;
+    top: 0;
+    right: -30px;
+    position: relative;
+}
+
+.reload:hover {
+    background-position: 0 -25px;
+    box-shadow: 0px 0px 20px rgb(102, 204, 255), /* 171, 166, 166 */
+    0px 0px 36px rgb(80, 195, 236), /* 149, 157, 147 */
+    0px 0px 28px rgb(86, 191, 242), /* 155, 153, 153 */
+    0px 0px 28px rgb(112, 214, 255);
+    /* 181, 176, 176 */
+}
+
+.reload:focus {
+    outline: none;
+        /* outline-color: transparent; */
+}
+
+
+input[type="reset"] {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.col-xs-12 {
+    position: relative;
+    min-height: 10px;
+    padding-left: 50px;
+    //war beides 10
+    padding-right: 50px;
+    width: 70%;
+}
+
+.bg-default {
+    background-color: #E5EFF5;
+}
+/*
+div {
+    display: block;
+}
+*/
+.connector-bar {
+    background-color: #252940; /*#66CCFF; */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.connector-bar-inner {
+    background-color: #c0c3f0; /*#006699;*/
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: -98px;
+    transform: skew(-27deg);
+    position: absolute;
+}
+
+
+.container-fluid.layout-container, .layout-container {
+    margin-top: 60px; 
+    padding: 0;
+}
+
+
+.layout-row {
+    margin: 0;
+}
+
+
+.col-sm-4, col-sm-6 {
+    position: relative;
+    min-height: 1px;
+}
+
+.savedlink {
+    max-height: 10px;
+    margin-top: -60px;
+}
+
+.savedwb {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+
+    margin-top: -10px;
+}
+
+
+a, .alpha {
+  	text-decoration: none;
+    font-weight: bold;
+    font-size: 1.00em;
+/*    line-height: 1.2;*/
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+a:before, .alpha:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h1:before, .alpha:before {
+    content: "/ ";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h2, .alpha {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: 'DynaPuff', sans-serif;
+}
+
+/*
+h2, .alpha {
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+*/
+
+
+h2:before, .alpha:before {
+    content: "Qatar/ ";
+    position: relative;
+    top: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+h2:after {
+    content: " © by MAC";
+    position: relative;
+    top: 0;
+    left: 5;
+    width: 2px;
+    height: 28px;
+    font-size: .70rem;
+    margin-right: 0.063em;
+    color: #6cf; //#0099CC;
+   } 
+/*
+h2, .beta {
+    font-weight: normal;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+*/
+h3, .alpha {
+    font-weight: normal;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+h3:before, .alpha:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 28px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+
+.bg-highlight {
+    background-image: linear-gradient(18deg, #069 0%, #09c 50%, #6cf 100%);
+    color: #fff;
+}
+
+h3, .alpha {
+    font-weight: normal;
+    font-size: 1.20rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+
+.mb15 {
+    margin-bottom: 15px !important;
+}
+
+
+b {
+    font-weight: normal;
+    font-size: 1.50rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+.y {
+    font-weight: normal;
+    font-size: 0.55rem;
+    line-height: 1.2;
+    font-family: "map-regular", arial, helvetica, sans-serif;
+}
+
+block-text-module *:last-child {
+    margin-bottom: 0;
+    left: 50px;
+}
+
+div.text, .table-container {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+.cell-white {
+    background-color: #FFFFFF;
+    height: 15px;
+}
+.cell-white-onto {
+    background-color: #FFFFFF;
+    height: 15px;
+    width: 20px;
+}
+
+
+.bg-light {
+    background-color: #E5E5E5;
+}
+
+/*glow um print*/
+/*#button {*/
+/*	width: 3rem;*/
+/*	cursor: pointer;*/
+/*	border: none;*/
+/*	border-radius: 6px;*/
+/*	background: linear-gradient	(45deg, aqua, blue);*/
+/*	padding: 1rem 1rem;*/
+/*color: aliceblue;*/
+/*	font-size: 1.5rem;*/
+/*}*/
+
+/* #button:hover {*/
+/*		color: black;*/
+/*		text-shadow: 0px 2px 5px white;*/
+/*		box-shadow: 0px 0px 25px rgb(102, 204, 255),*/ /* 171, 166, 166 */
+/*	0px 0px 45px rgb(80, 195, 236), *//* 149, 157, 147 */
+/*		0px 0px 35px rgb(86, 191, 242), *//* 155, 153, 153 */
+/*0px 0px 35px rgb(112, 214, 255); *//* 181, 176, 176 */
+/*}*/
+
+
+
+
+/* Print Button Start */
+.print-btn {
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    /*Hintergrund Button */
+    border: 1px solid rgb(113, 113, 113);
+    border-radius: 10px;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: 500;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.065);
+    transition: all 0.3s;
+}
+.printer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 100%;
+}
+.printer-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.printer-container svg {
+    width: 100%;
+    height: auto;
+    transform: translateY(4px);
+}
+.printer-page-wrapper {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.printer-page {
+    width: 70%;
+    height: 10px;
+    border: 1px solid black;
+    background-color: white;
+    transform: translateY(0px);
+    transition: all 0.3s;
+    transform-origin: top;
+}
+.print-btn:hover .printer-page {
+    height: 16px;
+    background-color: rgb(239, 239, 239);
+}
+.print-btn:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+
+/* Print Button Ende */
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 60px;
+    background-color: #333;
+    z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Elementen liegt */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* Fügt eine horizontale Scrollbar hinzu, falls die Elemente über den Rand hinausragen */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Ändert von center zu flex-start, um Überlappungen zu vermeiden */
+    align-items: center;
+    height: 100%;
+    white-space: nowrap; /* Verhindert, dass die Links in eine neue Zeile umbrechen */
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(7px, 1vw, 0.8em); /* Responsive Schriftgröße */
+    padding: 0 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+
+.navbar ul li a:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 8px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .navbar ul li {
+        margin: 0 0.2em; /*war 10px Weniger Abstand zwischen den Links */
+    }
+
+    .navbar ul li a {
+        font-size: 0.7em; /*clamp(6px, 1vw, 0.7em); /* Responsive Schriftgröße war 1em; /* Kleinere Schriftgröße auf kleineren Bildschirmen */
+        padding: 0 5px; /* Weniger Innenabstand */
+    }
+}

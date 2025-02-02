@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hallo</title>
+</head>
+<body>
+    Hallo Hallo
+    <br />
+    <br />
+    <button id="export-pdf" onclick="exportToPDF()">Export as PDF</button>
+    <script>
+        function exportToPDF() {
+            const content = document.documentElement.outerHTML; // HTML der gesamten Seite
+            fetch('erstellen_pdf.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    html: content
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'document.pdf';
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(err => console.error('Error generating PDF:', err));
+        }
+    </script>
+</body>
+</html>

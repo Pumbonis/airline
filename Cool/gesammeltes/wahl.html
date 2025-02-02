@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D'Hondt Sitzverteilung</title>
+	<style>
+		table { border-collapse: collapse; }
+		th, td { padding: 8px; border: 1px solid black; }
+		.fett {font-weight: bold;} 
+		.zusatz2 { font-size: .75vh;} 
+		.zusatz { font-size: .95vh;} 
+	</style>
+</head>
+<body>
+	<h1>D'Hondt Sitzverteilung</h1>
+	
+	<label for="seats">Anzahl der Sitze:</label>
+	<input type="number" id="seats" value="3">
+	<br><br>
+	
+	<div id="parties"></div>
+	<button onclick="addParty()">Partei hinzuf&uuml;gen</button>
+	<br><br>
+	
+	<button onclick="calculate()">Berechnen</button>
+	
+	<div id="result"></div>
+	<div id="steps"></div>
+
+	<script>
+	let parties = [];
+
+	function addParty() {
+		const partyDiv = document.createElement('div');
+		const partyInput = document.createElement('input');
+		partyInput.type = 'number';
+		partyInput.placeholder = 'Stimmen';
+		partyDiv.appendChild(partyInput);
+		document.getElementById('parties').appendChild(partyDiv);
+		parties.push(partyInput);
+	}
+
+	function calculate() {
+		const seatsCount = parseInt(document.getElementById('seats').value);
+		const votesByParty = parties.map(input => parseInt(input.value) || 0);
+		
+		const quotients = [];
+		for (const votes of votesByParty) {
+			const partyQuotients = [];
+			for (let i = 1; i <= seatsCount; i++) {
+				partyQuotients.push(votes / i);
+			}
+			quotients.push(partyQuotients);
+		}
+
+		const allQuotients = [].concat(...quotients.map((q, i) => q.map(v => [v, i])));
+		allQuotients.sort((a, b) => b[0] - a[0]);
+		
+		const seatsByParty = votesByParty.map(() => 0);
+		for (let i = 0; i < seatsCount; i++) {
+			seatsByParty[allQuotients[i][1]]++;
+		}
+		
+		let resultHTML = '<table><tr><th>Partei</th><th>Stimmen</th><th>Sitze</th></tr>';
+		for (let i = 0; i < votesByParty.length; i++) {
+			resultHTML += `<tr><td>Partei ${i+1}</td><td>${votesByParty[i]}</td><td>${seatsByParty[i]}</td></tr>`;
+		}
+		resultHTML += '</table>';
+		document.getElementById('result').innerHTML = resultHTML;
+		
+		let stepsHTML = '<h2>Berechnungsschritte</h2>';
+		stepsHTML += '<table><tr><th>Partei</th><th>Stimmen</th>' + Array.from({length: seatsCount}, (_, i) => `<th>Divisor ${i+1}</th>`).join('') + '</tr>';
+		for (let i = 0; i < quotients.length; i++) {
+			stepsHTML += `<tr><td>Partei ${i+1}</td><td>${votesByParty[i]}</td>`;
+			for (let j = 0; j < quotients[i].length; j++) {
+				stepsHTML += `<td class="fett">${quotients[i][j].toFixed(2)}</td>`;
+			}
+			stepsHTML += '</tr>';
+		}
+		stepsHTML += '</table>';
+		document.getElementById('steps').innerHTML = stepsHTML;
+	}
+	</script>
+<br>
+<p class="zusatz">Die Sitze werden der Reihe nach auf die h&ouml;chsten Teiler (durch 1, 2, 3,...) verteilt. </p>
+<br><br><br><br>
+<p class="zusatz2"><b>Rechnung als H&ouml;chstzahlenschema mit Teilern 1, 2, 3 usw.</b> <br>
+Die Stimmen werden fortlaufend durch 1, 2, 3 usw. geteilt;<br>
+die Teilungsergebnisse dienen als "Vergleichszahlen".<br>
+
+Jede Partei erh&auml;lt so viele Sitze, wie oft sie zu den zehn h&ouml;chsten Vergleichszahlen, den <i>H&ouml;chstzahlen</i>, beitr&auml;gt.<br> 
+
+Zur leichteren &Uuml;bersicht ist die Wiedergabe der Vergleichszahlen beim Dezimalkomma abgebrochen;<br>
+
+das ist ausreichend zu entscheiden, ob eine gr&ouml;&szlig;er als eine andere ist. <br>
+
+Dieser Entscheid ben&ouml;tigt nur bei der zehnten H&ouml;chstzahl eine Nachkommastelle, <br>
+
+um zu sehen, dass 335 / 4 = 83,75 gr&ouml;&szlig;er ist als 416 / 5 = 83,2.
+</p>
+<table class="zusatz2" style="text-align:right;">
+<caption>D&acute;Hondt-Verfahren als H&ouml;chstzahlenschema
+</caption>
+<tbody><tr>
+<th style="text-align:left;">Partei</th>
+<th colspan="2">A</th>
+<th colspan="2">B</th>
+<th colspan="2">C</th>
+<th colspan="2">D
+</th></tr>
+<tr>
+<td style="text-align:left;">Stimmen</td>
+<td colspan="2" style="text-align:center;">416</td>
+<td colspan="2" style="text-align:center;">335</td>
+<td colspan="2" style="text-align:center;">160</td>
+<td colspan="2" style="text-align:center;">89
+</td></tr>
+<tr>
+<th colspan="9">Vergleichszahlen
+</th></tr>
+<tr>
+<td style="text-align:left;">Stimmen / 1</td>
+<td style="text-align:left; border-right:hidden;"><small>1</small></td>
+<td>416</td>
+<td style="text-align:left; border-right:hidden;"><small>2</small></td>
+<td>335</td>
+<td style="text-align:left; border-right:hidden;"><small>5</small></td>
+<td>160</td>
+<td style="text-align:left; border-right:hidden;"><small>9</small></td>
+<td>89
+</td></tr>
+<tr>
+<td style="text-align:left;">Stimmen / 2</td>
+<td style="text-align:left; border-right:hidden;"><small>3</small></td>
+<td>208</td>
+<td style="text-align:left; border-right:hidden;"><small>4</small></td>
+<td>167</td>
+<td colspan="2">80</td>
+<td colspan="2">44
+</td></tr>
+<tr>
+<td style="text-align:left;">Stimmen / 3</td>
+<td style="text-align:left; border-right:hidden;"><small>6</small></td>
+<td>138</td>
+<td style="text-align:left; border-right:hidden;"><small>7</small></td>
+<td>111</td>
+<td colspan="2">53</td>
+<td colspan="2">29
+</td></tr>
+<tr>
+<td style="text-align:left;">Stimmen / 4</td>
+<td style="text-align:left; border-right:hidden;"><small>8</small></td>
+<td>104</td>
+<td style="text-align:left; border-right:hidden;"><small>10</small></td>
+<td>83,8</td>
+<td colspan="2">40</td>
+<td colspan="2">22
+</td></tr>
+<tr>
+<td style="text-align:left;">Stimmen / 5</td>
+<td colspan="2">83,2</td>
+<td colspan="2">67</td>
+<td colspan="2">32</td>
+<td colspan="2">17
+</td></tr>
+<tr>
+<th colspan="9">Ausz&auml;hlung der zehn H&ouml;chstzahlen
+</th></tr>
+<tr>
+<td style="text-align:left">Sitze</td>
+<td colspan="2" style="text-align:center;">4</td>
+<td colspan="2" style="text-align:center;">4</td>
+<td colspan="2" style="text-align:center;">1</td>
+<td colspan="2" style="text-align:center;">1
+</td></tr></tbody></table>
+
+
+</body>
+</html>

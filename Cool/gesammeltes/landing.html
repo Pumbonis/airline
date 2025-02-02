@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zentriertes Bild mit Rahmen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            border-radius: 32% 32% 32% 32% / 32% 32% 32% 32%  ; /* Rahmen hinzufügen */
+            padding: 10px; /* Abstand zwischen Rahmen und Bild */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+border-radius: 32% 32% 32% 32% / 32% 32% 32% 32%  ; /* Rahmen hinzufügen */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="boat.jpg" alt="Zentriertes Bild">
+    </div>
+
+    <script>
+        window.onload = function() {
+            const imageContainer = document.querySelector('.image-container');
+            imageContainer.style.opacity = 1;
+        };
+    </script>
+</body>
+</html>

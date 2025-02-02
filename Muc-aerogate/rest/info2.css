@@ -1,0 +1,617 @@
+
+*{
+margin: 0px;
+padding: 0px;
+font-family: sans-serif;
+}
+
+body {
+display: flex;
+justify-content: center;
+height: 100%;
+background: F7E7EC;
+align-items: top;
+/*cursor: url("ico/newarrow-new-inv.ico"), wait;*/
+}
+
+
+button {
+  position: absolute;
+  padding: 10px 20px;
+  background: #f5ddb7;
+  font-size: 17px;
+  font-weight: 900;
+  color: #181818;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px #18181869, inset 2px 2px 10px #ffffffb0;
+  transition: all .3s ease-in-out;
+}
+
+
+.icon-1 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0px;
+  height: auto;
+  transition: all 1.2s ease-in-out;
+  z-index: -1;
+}
+
+.icon-2 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0px;
+  height: auto;
+  transition: all 1.0s ease-in-out;
+  z-index: -2;
+}
+
+.icon-3 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0px;
+  height: auto;
+  transition: all .8s ease-in-out;
+  z-index: -2;
+}
+
+.icon-4 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0px;
+  height: auto;
+  transition: all .9s ease-in-out;
+  z-index: -2;
+}
+
+.icon-5 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0px;
+  height: auto;
+  transition: all .8s ease-in-out;
+  z-index: -2;
+}
+
+button:hover {
+  padding: 10px 20px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+button:hover .icon-1 {
+  top: -230%; /*mitte*/
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 50px;
+  height: auto;
+  animation: inIcon1 1s ease .45s forwards;
+}
+
+@keyframes inIcon1 {
+  0% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  25% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(5deg);
+  }
+
+  50% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(1deg);
+  }
+
+  65% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(3deg);
+  }
+
+  100% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+}
+
+button:hover .icon-2 {
+  position: absolute;
+  top: -180%; /*4*/
+  left: 78%;
+  transform: translate(-50%, 0);
+  width: 75px;
+  height: auto;
+  animation: inIcon2 1s ease .45s forwards;
+}
+
+@keyframes inIcon2 {
+  0% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  35% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(10deg);
+  }
+
+  50% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(4deg);
+  }
+
+  80% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(5deg);
+  }
+
+  100% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+}
+
+button:hover .icon-3 {
+  position: absolute;
+  top: -140%; /*2*/
+  left: 25%;
+  transform: translate(-50%, 0);
+  width: 60px;
+  height: auto;
+  animation: inIcon3 1s ease .45s forwards;
+}
+
+@keyframes inIcon3 {
+  0% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  35% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(-2deg);
+  }
+
+  100% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+}
+
+button:hover .icon-4 {
+  position: absolute;
+  top: -320%; /*1*/
+  left: 20%;
+  transform: translate(-50%, 0);
+  width: 85px;
+  height: auto;
+  animation: inIcon4 1s ease .45s forwards;
+}
+
+@keyframes inIcon4 {
+  0% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  40% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(-3deg);
+  }
+
+  100% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+}
+
+button:hover .icon-5 {
+  position: absolute;
+  top: -330%; /*3*/
+  left: 80%;
+  transform: translate(-50%, 0);
+  width: 85px;
+  height: auto;
+  animation: inIcon5 1s ease .45s forwards;
+}
+
+@keyframes inIcon5 {
+  0% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  35% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(-3deg);
+  }
+
+  100% {
+    transform-origin: 0 100%;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+}
+
+.fil-leaf-1 {
+  fill: #7B9B3A
+}
+
+.fil-leaf-2 {
+  fill: #556729;
+  fill-rule: nonzero
+}
+
+.fil-leaf-3 {
+  fill: #556729
+}
+
+.fil-leaf-4 {
+  fill: #3C4819
+}
+
+.fil-leaf-5 {
+  fill: #3C4819
+}
+  
+
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2px;
+    margin-top: 60px; /* Anpassen nach der Höhe der Navigationsleiste */
+}
+
+.card {
+max-width: 90%; 
+width: 300px; /* war 300 */
+height: 375px; /*375*/
+margin: 10px;
+box-shadow: 5px 5px 20px black;
+overflow: hidden;
+border-radius: 8px;
+}
+
+img {
+width: 300px; /*300px*/ 
+height: 375px; /*375px*/
+border-radius: 8px;
+transition: 1.5s;
+}
+
+.intro {
+height: 70px;
+width: 300px; /*300px*/
+padding: 6px;
+box-sizing: border-box;
+position: relative;
+border-radius: 8px;
+bottom: 70px;
+background: rgb(27, 27, 27, .5);
+color: white;
+transition: .5s;
+}
+
+.intro2 {
+height: 70px;
+width: 300px; /*300px*/
+padding: 6px;
+box-sizing: border-box;
+position: relative;
+border-radius: 8px;
+bottom: 70px;
+background: rgb(27, 27, 27, .5);
+color: white;
+transition: .5s;
+}
+
+
+div #nein {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+h1{
+margin: 10px;
+margin-bottom: 20px;
+/*padding-left: 2em; /*50px;*/
+font-size: 1.3em;
+}
+
+h2 {
+color: white;
+} 
+
+h4 {
+color: white;
+} 
+
+p {
+font: 0.8em/2.2 sans-serif;
+/*font-size: 13px;*/
+/*margin: 20px;*/
+margin-bottom: 0px;
+visibility: hidden;
+opacity: 0;
+color: white;
+}
+
+p#nein {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+a {
+ font: 1em/2.2 sans-serif;
+ font-weight: bold;
+/*	font-size: 0.9em;*/
+	text-decoration: none;
+	color: white;
+} 
+
+
+span {
+font-weight: bold;
+}
+
+.card:hover {
+cursor: url("ico/newarrow-new.ico"), wait;
+}
+
+.card:hover .intro {
+height: 375px; /*375px*/
+bottom: 350px; /*300px*/
+background: black;
+opacity: 0.9;
+border-radius: 8px;
+}
+
+.card:hover p{
+opacity:1;
+visibility: visible;
+}
+
+
+.card:hover .intro2 {
+height: 375px; /*350px*/
+bottom: 350px; /*300px*/
+background: white;
+opacity: .8;
+border-radius: 8px;
+}
+
+
+
+
+.card:hover img{
+transform: scale(1.2) rotate(-360deg);
+transition-timing-function: ease-in-out;
+}
+
+.tel {
+	height:12px;
+	width:12px;
+	border-radius: 0px;
+/*	padding: 0px 15px; */
+	margin: 0px 5px 5px 3px;
+	transition: 0s;
+	background: black;
+	opacity: 0.9;
+} 
+
+.ico {
+	height:20px;
+	width:20px;
+	border-radius: 0px;
+/*	padding: 0px 15px; */
+	margin: 0px 0px 0px 3px;
+} 
+
+.download {
+cursor: url("ico/download.ico"), wait;
+} 
+
+
+
+.overlay {
+  display: none;
+  position: relative;  /* or absolute, depending on requirement */
+  width: 700px;
+  height: 500px;
+  opacity:.98;
+  border-radius: 8px;
+  top: 20;
+  left: 30;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* high z-index to overlay all other content */
+  justify-content: center;
+  align-items: center;
+}
+
+#toggle-overlay:checked + .overlay { display: flex; }
+
+
+.info-content {
+  background: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 20px black;
+  text-align: center;
+  opacity:.9;
+}
+
+.info-content p{
+ opacity: 1;
+ visibility: visible;
+ cursor: default;
+ color: white;
+ font-weight: 700;
+} 
+
+.more-info {
+cursor: url("ico/info2.ico"), pointer;
+} 
+
+li{
+margin: 7px;
+font: 0.8em/2.2 sans-serif;
+}
+
+
+
+
+
+/* preload images */
+
+.vorladen {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	pointer-events: none;
+	opacity: 0%;
+}
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 60px;
+    background-color: #333;
+    z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Elementen liegt */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* Fügt eine horizontale Scrollbar hinzu, falls die Elemente über den Rand hinausragen */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Ändert von center zu flex-start, um Überlappungen zu vermeiden */
+    align-items: center;
+    height: 100%;
+    white-space: nowrap; /* Verhindert, dass die Links in eine neue Zeile umbrechen */
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(7px, 1vw, 0.8em); /* Responsive Schriftgröße */
+    padding: 0 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+
+.navbar ul li a:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 8px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .navbar ul li {
+        margin: 0 0.2em; /*war 10px Weniger Abstand zwischen den Links */
+    }
+
+    .navbar ul li a {
+        font-size: 0.9em; /*clamp(6px, 1vw, 0.7em); /* Responsive Schriftgröße war 1em; /* Kleinere Schriftgröße auf kleineren Bildschirmen */
+        padding: 0 5px; /* Weniger Innenabstand */
+    }
+}
+
+
+
+
+
+
+/* Alt 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 60px;
+    background-color: #333;
+    z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Elementen liegt */
+    
+    /*
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6em ;
+    padding: 0 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+
+.navbar ul li a:before {
+    content: "/";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 8px;
+    margin-right: 0.063em;
+    color: #0099CC;
+}
+
+
+*/

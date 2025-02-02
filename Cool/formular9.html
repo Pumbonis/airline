@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Calculation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .calculation {
+            margin-bottom: 10px;
+        }
+        .calculation label {
+            display: inline-block;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fuel Calculation Form</h1>
+    
+    <table id="fuelTable">
+        <tr>
+            <th>Tank No.</th>
+            <th>Requested Departure Fuel</th>
+            <th>Actual Departure Fuel</th>
+            <th>Actual Arrival Fuel</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="tankNo"></td>
+            <td><input type="number" name="requestedDepartureFuel"></td>
+            <td><input type="number" name="actualDepartureFuel"></td>
+            <td><input type="number" name="actualArrivalFuel"></td>
+        </tr>
+    </table>
+    
+    <button onclick="addRow()">Add Row</button>
+    
+    <div class="calculation">
+        <label>Total Dispatch Pounds:</label>
+        <input type="number" id="totalDispatchPounds" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Total Pounds:</label>
+        <input type="number" id="totalPounds" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Total actual pounds on board:</label>
+        <input type="number" id="totalActualPounds" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Subtract total pounds on arrival:</label>
+        <input type="number" id="subtractTotalPounds" readonly>
+    </div>
+  
+  <div class="calculation">
+    <label>Gallons pumped</label>
+    <input type="number" id="gallonsPumped">
+  </div>
+    
+    <div class="calculation">
+        <label>Equals pounds added:</label>
+        <input type="number" id="equalsPoundsAdded" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Divided by actual fuel density LBS/GAL:</label>
+        <input type="number" id="fuelDensity" value="6.70">
+    </div>
+    
+    <div class="calculation">
+        <label>Equals calculated gallons added:</label>
+        <input type="number" id="calculatedGallonsAdded" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Subtract total gallons pumped:</label>
+        <input type="number" id="totalGallonsPumped">
+    </div>
+    
+    <div class="calculation">
+        <label>Equals difference:</label>
+        <input type="number" id="equalsDifference" readonly>
+    </div>
+    
+    <div class="calculation">
+        <label>Allowable difference (tolerance):</label>
+        <input type="number" id="allowableDifference">
+    </div>
+    
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('input', updateCalculations);
+    });
+
+    // Set default fuel density
+    document.getElementById('fuelDensity').value = 6.70;
+
+    updateCalculations();
+});
+
+function updateCalculations() {
+    // Calculate and set Total Dispatch Pounds (sum of Requested Departure Fuel)
+    const totalDispatchPounds = calculateSum('requestedDepartureFuel');
+    document.getElementById('totalDispatchPounds').value = totalDispatchPounds.toFixed(2);
+
+    // Calculate and set Total actual pounds on board (sum of Actual Departure Fuel)
+    const totalActualPounds = calculateSum('actualDepartureFuel');
+    document.getElementById('totalActualPounds').value = totalActualPounds.toFixed(2);
+
+    // Calculate and set Total Pounds (sum of Actual Arrival Fuel)
+    const totalPounds = calculateSum('actualArrivalFuel');
+    document.getElementById('totalPounds').value = totalPounds.toFixed(2);
+    document.getElementById('subtractTotalPounds').value = totalPounds.toFixed(2);
+
+    // Calculate Equals pounds added
+    const poundsAdded = totalActualPounds - totalPounds;
+    document.getElementById('equalsPoundsAdded').value = poundsAdded.toFixed(2);
+
+    // Calculate Equals calculated gallons added
+    const fuelDensity = parseFloat(document.getElementById('fuelDensity').value) || 6.70;
+    const calculatedGallonsAdded = poundsAdded / fuelDensity;
+    document.getElementById('calculatedGallonsAdded').value = calculatedGallonsAdded.toFixed(2);
+
+    // Get Gallons pumped
+    const gallonsPumped = parseFloat(document.getElementById('gallonsPumped').value) || 0;
+    document.getElementById('totalGallonsPumped').value = gallonsPumped.toFixed(2);
+
+    // Calculate Equals difference
+    const difference = calculatedGallonsAdded - gallonsPumped;
+    document.getElementById('equalsDifference').value = difference.toFixed(2);
+}
+
+function calculateSum(fieldName) {
+    let total = 0;
+    const fields = document.querySelectorAll(`input[name="${fieldName}"]`);
+    fields.forEach(input => {
+        total += parseFloat(input.value) || 0;
+    });
+    return total;
+}
+
+function addRow() {
+    const table = document.getElementById('fuelTable');
+    const newRow = table.insertRow(-1);
+    const fields = ['tankNo', 'requestedDepartureFuel', 'actualDepartureFuel', 'actualArrivalFuel'];
+    fields.forEach((field, index) => {
+        const cell = newRow.insertCell(index);
+        const input = document.createElement('input');
+        input.type = field === 'tankNo' ? 'text' : 'number';
+        input.name = field;
+        input.addEventListener('input', updateCalculations);
+        cell.appendChild(input);
+    });
+    updateCalculations();
+}
+    </script>
+</body>
+</html>

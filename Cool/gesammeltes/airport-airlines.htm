@@ -1,0 +1,1830 @@
+<html>
+
+<head>
+    <title>Report 1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .a-IRR {
+            border: 1px solid;
+            position: relative
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 16px
+        }
+ 
+        .a-Button,
+        .u-Button {
+            -webkit-appearance: none;
+            background: 0 0;
+            border: 1px solid;
+            color: inherit;
+            cursor: pointer;
+            display: inline-block;
+            font: inherit;
+            line-height: normal;
+            margin: 0;
+            padding: 4px 12px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            vertical-align: middle;
+            white-space: nowrap
+        }
+
+        .a-Button:active,
+        .a-Button:focus,
+        .a-Button:hover {
+            text-decoration: none
+        }
+
+        .a-Button.is-disabled,
+        .a-Button:disabled {
+            cursor: default
+        }
+
+        .a-Button::-moz-focus-inner {
+            border: 0;
+            padding: 0
+        }
+
+        .a-Button {
+            border: none;
+            color: #444;
+            border-radius: 2px;
+            -webkit-background-clip: padding;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            -webkit-font-smoothing: antialiased
+        }
+
+        .a-Button:hover {
+            z-index: 100
+        }
+
+        .a-Button:focus {
+            outline: 0;
+            z-index: 110
+        }
+
+        .a-Button:active {
+            z-index: 100
+        }
+
+        .a-IRR-button {
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)inset;
+            background-color: #FAFAFA
+        }
+
+        .a-IRR-button:hover {
+            background-color: #FFF;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)inset, 0 1px 2px 0 rgba(0, 0, 0, .1)
+        }
+
+        .a-IRR-button:active,
+        .a-IRR-button:active:focus {
+            background-color: #E0E0E0;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)inset, 0 2px 3px 0 rgba(0, 0, 0, .1)inset;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)inset, 0 2px 3px 0 rgba(0, 0, 0, .1)inset
+        }
+
+        .a-IRR-button.is-active {
+            background-color: #E0E0E0;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .15)inset, 0 2px 3px 0 rgba(0, 0, 0, .1)inset
+        }
+
+        .a-IRR-button:focus {
+            box-shadow: 0 0 0 1px #4696fc inset, 0 0 0 1px #4696fc, 0 0 2px 2px rgba(70, 150, 252, .5)
+        }
+
+        .a-IRR-toolbar {
+            padding: 8px;
+            border-bottom: 1px solid;
+            display: table;
+            width: 100%;
+            position: relative
+        }
+
+        .a-IRR-buttons,
+        .a-IRR-controls {
+            display: table-cell;
+            vertical-align: top
+        }
+
+        .a-IRR-buttons {
+            text-align: right
+        }
+
+        .a-IRR-search {
+            margin-right: 4px
+        }
+
+        .a-IRR-search-field {
+            display: inline-block;
+            min-height: 30px;
+            height: 30px;
+            padding: 0 8px;
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0
+        }
+
+        .a-IRR-search-field:focus {
+            outline: 0
+        }
+
+        .a-IRR-search-field {
+            border: 1px solid #D0D0D0
+        }
+
+        .a-IRR-search-field:focus {
+            border-color: #4696fc;
+            -webkit-box-shadow: 0 0 0 1px #4696fc inset, 0 0 2px 0 rgba(70, 150, 252, .5);
+            box-shadow: 0 0 0 1px #4696fc inset, 0 0 2px 0 rgba(70, 150, 252, .5)
+        }
+
+        .a-IRR-button--search {
+            vertical-align: top;
+            padding: 8px 12px
+        }
+
+        .a-IRR-table {
+            border-collapse: collapse;
+            table-layout: auto;
+            border-spacing: 0;
+            width: 100%;
+            font-size: inherit
+        }
+
+        .a-IRR-header {
+            background-color: #F0F0F0;
+            vertical-align: bottom;
+            padding: 0;
+            color: #404040;
+            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
+            border-bottom: 1px solid #E0E0E0
+        }
+
+        .a-IRR-header--group {
+            padding: 8px 12px;
+            text-align: left;
+            background-color: #F8F8F8;
+            border-top: 1px solid #E8E8E8
+        }
+
+        .a-IRR-table tr:first-child .a-IRR-header--group {
+            border-top-width: 0
+        }
+
+        .a-IRR-table .a-IRR-header {
+            border-left: 1px solid #E0E0E0
+        }
+
+        .a-IRR-header--pivotColumn,
+        .a-IRR-header--pivotRow {
+            background-color: #F8F8F8;
+            padding: 8px
+        }
+
+        .a-IRR-header--pivotRow {
+            border-right: 1px solid #E0E0E0
+        }
+
+        .a-IRR-table td {
+            padding: 8px 12px;
+            color: #404040;
+            -webkit-transition: background-color .1s;
+            -moz-transition: background-color .1s;
+            -o-transition: background-color .1s;
+            transition: background-color .1s
+        }
+
+        .a-IRR-table tr:nth-child(even) td {
+            background-color: #FAFAFA
+        }
+
+        .a-IRR-table tr:hover td,
+        .a-IRR-table tr:nth-child(even):hover td {
+            background-color: #F4F4F4
+        }
+
+        .a-IRR-table td {
+            border-left: 1px solid #F0F0F0;
+            border-top: 1px solid #F0F0F0
+        }
+
+        .a-IRR-table tr td:last-child {
+            border-right: 1px solid #F0F0F0
+        }
+
+        .a-IRR-table tr td:first-child,
+        .a-IRR-table tr th:first-child {
+            border-left-width: 0
+        }
+
+        .a-IRR-table tr td:last-child,
+        .a-IRR-table tr th:last-child {
+            border-right-width: 0
+        }
+
+        .a-IRR-headerLabel,
+        .a-IRR-headerLink {
+            padding: 12px;
+            display: block;
+            text-align: inherit
+        }
+
+        .a-IRR-content {
+            overflow: auto;
+            clear: both;
+            position: relative
+        }
+
+        .a-IRR {
+            border-color: #E0E0E0;
+            background-color: #FFF
+        }
+
+        .a-IRR-toolbar {
+            border-color: #E0E0E0;
+            background-color: #F0F0F0
+        }
+    </style>
+    <script type="text/javascript">
+        (window.apexir_search = {}),
+            (apexir_search.search = function (e) {
+                for (
+                    var n = document.getElementById("S" + e).value.toUpperCase(),
+                    a = document
+                        .getElementById("data" + e)
+                        .getElementsByTagName("TR"),
+                    t = a.length,
+                    r = 0;
+                    t > r;
+                    r++
+                )
+                    if ("" === n) a[r].style.display = "";
+                    else {
+                        var l = a[r].getElementsByTagName("TD");
+                        (lCellCount = l.length), (lFound = !1);
+                        for (var o = 0; !lFound && lCellCount > o; o++)
+                            -1 != l[o].innerHTML.toUpperCase().indexOf(n) && (lFound = !0);
+                        a[r].style.display = lFound ? "" : "none";
+                    }
+            }),
+            (apexir_search.searchIfEnter = function (e, n) {
+                var a;
+                if (window.event) a = window.event.keyCode;
+                else {
+                    if (!e) return !0;
+                    a = e.which;
+                }
+                return 13 == a ? (apexir_search.search(n), !1) : !0;
+            });
+    </script>
+
+
+			
+</head>
+
+<body>
+    <div class="a-IRR">
+        <div class="a-IRR-toolbar">
+            <div class="a-IRR-controls">
+                <div class="a-IRR-search">
+                    <input class="a-IRR-search-field" id="S4960885770178897" title="Search" type="text" size="30"
+                        maxlength="4000" value=""
+                        onkeydown="return apexir_search.searchIfEnter(event, '4960885770178897');" />
+                    <button class="a-Button a-IRR-button a-IRR-button--search" type="button"
+                        onclick="apexir_search.search('4960885770178897')">
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="a-IRR-content">
+            <div class="a-IRR-reportView">
+                <table summary="" class="a-IRR-table" id="mainTable">
+                    <tr>
+                        <th class="a-IRR-header u-tL" id="C4961769353178907">
+                            <span class="a-IRR-headerLabel">Lv2</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4962124929178907">
+                            <span class="a-IRR-headerLabel">Lv3</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4962519138178908">
+                            <span class="a-IRR-headerLabel">Lvl</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4962953444178908">
+                            <span class="a-IRR-headerLabel">Pwm</span>
+                        </th>
+                        <th class="a-IRR-header" id="C4979292396178922">
+                            <span class="a-IRR-headerLabel">Pwf</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4963360188178908">
+                            <span class="a-IRR-headerLabel">Pwc</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4963730746178909">
+                            <span class="a-IRR-headerLabel">Pwi</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4964105171178909">
+                            <span class="a-IRR-headerLabel">Stationsleitung</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4964499766178909">
+                            <span class="a-IRR-headerLabel">Tix Counter</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4964877291178910">
+                            <span class="a-IRR-headerLabel">Cargo</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4965331581178910">
+                            <span class="a-IRR-headerLabel">Catering</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4965768323178910">
+                            <span class="a-IRR-headerLabel">Fuel</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4966128476178911">
+                            <span class="a-IRR-headerLabel">Technik</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4966550852178911">
+                            <span class="a-IRR-headerLabel">Pushback</span>
+                        </th>
+                        <th class="a-IRR-header u-tL" id="C4972487683178916">
+                            <span class="a-IRR-headerLabel">Cleaning</span>
+                        </th>
+													<th>Export</th>
+                    </tr>
+                    <tbody id="data4960885770178897">
+                        <tr>
+                            <td headers="C4961769353178907">X3</td>
+                            <td headers="C4962124929178907">HLX</td>
+                            <td headers="C4962519138178908">TUI</td>
+                            <td align="right" headers="C4962953444178908">83</td>
+                            <td align="right" headers="C4979292396178922">69</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Fr.Haynol</td>
+                            <td headers="C4964499766178909">
+                                N&#x2F;A &#x2F;&#x2F;Security CR apt-svc
+                            </td>
+                            <td headers="C4964877291178910">Swissport Cargo</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">NAYAK</td>
+                            <td headers="C4966550852178911">EFM singleman</td>
+                            <td headers="C4972487683178916">Wieprecht</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">QR</td>
+                            <td headers="C4962124929178907">QTR</td>
+                            <td headers="C4962519138178908">QATAR Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Station</td>
+                            <td headers="C4964499766178909">Cargo FLT Rep.:</td>
+                            <td headers="C4964877291178910">Swissport</td>
+                            <td headers="C4965331581178910">Return Catering</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">FLTechnik</td>
+                            <td headers="C4966550852178911">FLTechnik</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                           			<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">DY</td>
+                            <td headers="C4962124929178907">NAX</td>
+                            <td headers="C4962519138178908">Norwegian Air Sh.</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">OPS OSL</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport</td>
+                            <td headers="C4965331581178910">GG (nur bei Delay)</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">
+                                by crew (M&#xFC;ll retour OSL)
+                            </td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">OE</td>
+                            <td headers="C4962124929178907">LDM</td>
+                            <td headers="C4962519138178908">Lauda motion</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">cargogate</td>
+                            <td headers="C4965331581178910">LSG</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">singleman EFM</td>
+                            <td headers="C4972487683178916">ASM</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">UA</td>
+                            <td headers="C4962124929178907">UAL</td>
+                            <td headers="C4962519138178908">UNITED AIRLINES</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Hr. Dietze</td>
+                            <td headers="C4964499766178909">office</td>
+                            <td headers="C4964877291178910">LH</td>
+                            <td headers="C4965331581178910">LSG</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">BA&#x2F;DL</td>
+                            <td headers="C4966550852178911">EFM</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          				<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>                         
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">UN</td>
+                            <td headers="C4962124929178907">TSO</td>
+                            <td headers="C4962519138178908">transaero airlines</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Herr Konrad</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH on request</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">ASM</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">UT</td>
+                            <td headers="C4962124929178907">UTA</td>
+                            <td headers="C4962519138178908">UT AIR</td>
+                            <td align="right" headers="C4962953444178908">0</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Herr Konrad</td>
+                            <td headers="C4964499766178909">Frau Konrad</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH on request</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">S7</td>
+                            <td headers="C4962124929178907">SBI</td>
+                            <td headers="C4962519138178908">S7 Airlines</td>
+                            <td align="right" headers="C4962953444178908">80</td>
+                            <td align="right" headers="C4979292396178922">80</td>
+                            <td align="right" headers="C4963360188178908">30</td>
+                            <td align="right" headers="C4963730746178909">15</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">FAX</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">LSG (via rep)</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">single man</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907"></td>
+                            <td headers="C4962124929178907">AIN</td>
+                            <td headers="C4962519138178908">African Int. Air.</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Chapman Freeborn - 95890</td>
+                            <td headers="C4964499766178909">---</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                          
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">-</td>
+                            <td headers="C4962124929178907">BAE</td>
+                            <td headers="C4962519138178908">BAE Systems</td>
+                            <td align="right" headers="C4962953444178908">78</td>
+                            <td align="right" headers="C4979292396178922">78</td>
+                            <td align="right" headers="C4963360188178908">31</td>
+                            <td align="right" headers="C4963730746178909">11</td>
+                            <td headers="C4964105171178909">n&#x2F;a</td>
+                            <td headers="C4964499766178909">n&#x2F;a</td>
+                            <td headers="C4964877291178910">Panavia</td>
+                            <td headers="C4965331581178910">Air Caterer</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                            	<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>                       
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SV</td>
+                            <td headers="C4962124929178907">SVA</td>
+                            <td headers="C4962519138178908">Saudia</td>
+                            <td align="right" headers="C4962953444178908">85</td>
+                            <td align="right" headers="C4979292396178922">85</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">mobil 0162&#x2F;2608707</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport Cargo</td>
+                            <td headers="C4965331581178910">Gate Gourmet</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">NAYAK</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">RO</td>
+                            <td headers="C4962124929178907">ROT</td>
+                            <td headers="C4962519138178908">Tarom</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Fr.Dorina Aradoaie</td>
+                            <td headers="C4964499766178909">Mobil</td>
+                            <td headers="C4964877291178910">Swissport Cargo</td>
+                            <td headers="C4965331581178910">LSG - Rep only</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">singleman</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SZ</td>
+                            <td headers="C4962124929178907">SMR</td>
+                            <td headers="C4962519138178908">Somon Air</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">Augsburg Aircarterer</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SU</td>
+                            <td headers="C4962124929178907">AFL</td>
+                            <td headers="C4962519138178908">aeroflot</td>
+                            <td align="right" headers="C4962953444178908">80</td>
+                            <td align="right" headers="C4979292396178922">80</td>
+                            <td align="right" headers="C4963360188178908">30</td>
+                            <td align="right" headers="C4963730746178909">15</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">Modul C</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">LSG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH Rep only</td>
+                            <td headers="C4966550852178911">EFM singleman</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">8Q</td>
+                            <td headers="C4962124929178907">OHY</td>
+                            <td headers="C4962519138178908">Onur Air</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Onur Air Travel</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport</td>
+                            <td headers="C4965331581178910">Gate Gourmet on request</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">ASM</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">OT</td>
+                            <td headers="C4962124929178907">OTF</td>
+                            <td headers="C4962519138178908">Orange To Fly</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">A4</td>
+                            <td headers="C4962124929178907">AZO</td>
+                            <td headers="C4962519138178908">AZIMUTH Airlines</td>
+                            <td align="right" headers="C4962953444178908">80</td>
+                            <td align="right" headers="C4979292396178922">80</td>
+                            <td align="right" headers="C4963360188178908">30</td>
+                            <td align="right" headers="C4963730746178909">15</td>
+                            <td headers="C4964105171178909">Herr Konrad</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">Techniker o&#x2F;b</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SQ</td>
+                            <td headers="C4962124929178907">SIA</td>
+                            <td headers="C4962519138178908">Singapore Airlines</td>
+                            <td align="right" headers="C4962953444178908">0</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">0</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">93940,93941</td>
+                            <td headers="C4964499766178909">n&#x2F;r</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Gate Gourmet 93424</td>
+                            <td headers="C4965768323178910">Skytanking 97264</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">n&#x2F;r</td>
+                            <td headers="C4972487683178916">Avsec</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">AZ</td>
+                            <td headers="C4962124929178907">ITY</td>
+                            <td headers="C4962519138178908">Alitialia</td>
+                            <td align="right" headers="C4962953444178908">84</td>
+                            <td align="right" headers="C4979292396178922">84</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Fr. Donatella Weiss</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport</td>
+                            <td headers="C4965331581178910">Gate Gourmet (rep)</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">
+                                EMB&#x2F;SWPL&#x2F;&#x2F;&#x2F;Airbus&#x2F;LH
+                            </td>
+                            <td headers="C4966550852178911">EFM</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">EK</td>
+                            <td headers="C4962124929178907">UAE</td>
+                            <td headers="C4962519138178908">Emirates</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Hr. J. Sobottka-Rogalla</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">DO&amp;CO</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">AZ</td>
+                            <td headers="C4966550852178911">AZ</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">LY</td>
+                            <td headers="C4962124929178907">ELY</td>
+                            <td headers="C4962519138178908">El Al</td>
+                            <td align="right" headers="C4962953444178908">91</td>
+                            <td align="right" headers="C4979292396178922">73</td>
+                            <td align="right" headers="C4963360188178908">36</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Hr. Tsadok Zoellig</td>
+                            <td headers="C4964499766178909">LY Halle F</td>
+                            <td headers="C4964877291178910">LUG</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">-</td>
+                            <td headers="C4962124929178907">CTM</td>
+                            <td headers="C4962519138178908">French Air Force</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">AF</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">S4</td>
+                            <td headers="C4962124929178907">RZO</td>
+                            <td headers="C4962519138178908">SATA International</td>
+                            <td align="right" headers="C4962953444178908">76</td>
+                            <td align="right" headers="C4979292396178922">76</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">OCC 0035 296 281 260</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">
+                                LSG (returncatering o&#x2F;b)
+                            </td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">ACC</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">IG</td>
+                            <td headers="C4962124929178907">ISS</td>
+                            <td headers="C4962519138178908">Meridiana</td>
+                            <td align="right" headers="C4962953444178908">84</td>
+                            <td align="right" headers="C4979292396178922">84</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Christiana Pisano</td>
+                            <td headers="C4964499766178909">24 hrs Duty Mananger</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">returncatering</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">singleman</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">EY</td>
+                            <td headers="C4962124929178907">ETD</td>
+                            <td headers="C4962519138178908">ETIHAD</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Hr. Mohamed Hegazy</td>
+                            <td headers="C4964499766178909">Mobil:</td>
+                            <td headers="C4964877291178910">LUG</td>
+                            <td headers="C4965331581178910">DO&amp;CO</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">AZ</td>
+                            <td headers="C4966550852178911">LH</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">U6</td>
+                            <td headers="C4962124929178907">SVR</td>
+                            <td headers="C4962519138178908">Ural Airlines</td>
+                            <td align="right" headers="C4962953444178908">80</td>
+                            <td align="right" headers="C4979292396178922">80</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">10</td>
+                            <td headers="C4964105171178909">Hr.Konrad</td>
+                            <td headers="C4964499766178909">Fr. Konrad</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">LSG (returnmeals o&#x2F;b)</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">N&#x2F;A</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">DL</td>
+                            <td headers="C4962124929178907">DAL</td>
+                            <td headers="C4962519138178908">Delta Airlines</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">0</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">...</td>
+                            <td headers="C4964877291178910">LUG</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">Delta</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">CY</td>
+                            <td headers="C4962124929178907">CYP</td>
+                            <td headers="C4962519138178908">Cyprus Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">OCC 24 Std.</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">--</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">EFM</td>
+                            <td headers="C4972487683178916">Camso</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">TU</td>
+                            <td headers="C4962124929178907">TAR</td>
+                            <td headers="C4962519138178908">Tunisair</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Jahn Said</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">LH</td>
+                            <td headers="C4965331581178910">GG via Rep. only</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">EFM singleman</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">AT</td>
+                            <td headers="C4962124929178907">RAM</td>
+                            <td headers="C4962519138178908">Royal Air Maroc</td>
+                            <td align="right" headers="C4962953444178908">75</td>
+                            <td align="right" headers="C4979292396178922">75</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Area Manager Jalal Khoudi</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">EFM</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">AH</td>
+                            <td headers="C4962124929178907">CTM</td>
+                            <td headers="C4962519138178908">Air Algerie</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH bei Bedarf</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">AY</td>
+                            <td headers="C4962124929178907">FIN</td>
+                            <td headers="C4962519138178908">Finnair</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Juan Jose Jimenez</td>
+                            <td headers="C4964499766178909">aerogate B</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Gate Gourmet</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">
+                                LH Cityl -EMB&#x2F; LH- Airbu
+                            </td>
+                            <td headers="C4966550852178911">Singleman EFM</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">A2</td>
+                            <td headers="C4962124929178907">AZI</td>
+                            <td headers="C4962519138178908">Astra Airlines</td>
+                            <td align="right" headers="C4962953444178908">84</td>
+                            <td align="right" headers="C4979292396178922">84</td>
+                            <td align="right" headers="C4963360188178908">70</td>
+                            <td align="right" headers="C4963730746178909">35</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">return catering on board</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Crombeen</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">3V</td>
+                            <td headers="C4962124929178907">TAY</td>
+                            <td headers="C4962519138178908">TNT Cargo</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">TNT 089 358175007 oder</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">UX</td>
+                            <td headers="C4962124929178907">AEA</td>
+                            <td headers="C4962519138178908">Air Europa</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Valentin</td>
+                            <td headers="C4964499766178909">OCC +34 913 938 243</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">NAYAK</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico (holt nur M&#xFC;ll)</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">D8</td>
+                            <td headers="C4962124929178907">IBK</td>
+                            <td headers="C4962519138178908">Norwegian Air Int.</td>
+                            <td align="right" headers="C4962953444178908">80</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Swissport Losch</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">
+                                by crew (M&#xFC;ll retour OSL)
+                            </td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">-</td>
+                            <td headers="C4962124929178907">OLY</td>
+                            <td headers="C4962519138178908">Olympus Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">Gate Gourmet</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SN</td>
+                            <td headers="C4962124929178907">BEL</td>
+                            <td headers="C4962519138178908">-</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO auf Workorder</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">0B</td>
+                            <td headers="C4962124929178907">BMS</td>
+                            <td headers="C4962519138178908">Blue Air</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">IV</td>
+                            <td headers="C4962124929178907">IV</td>
+                            <td headers="C4962519138178908">GP Aviation</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Tom Zorman, Ganesh Piga</td>
+                            <td headers="C4964499766178909">SITA: SOFOO8X</td>
+                            <td headers="C4964877291178910">T.b.a.</td>
+                            <td headers="C4965331581178910">Return Catering ex PRN</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Camso</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">C3</td>
+                            <td headers="C4962124929178907">C3</td>
+                            <td headers="C4962519138178908">Tradeair</td>
+                            <td align="right" headers="C4962953444178908">76</td>
+                            <td align="right" headers="C4979292396178922">76</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">PC</td>
+                            <td headers="C4962124929178907">PGT</td>
+                            <td headers="C4962519138178908">Pegasus Airlines</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">by EFM</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SN</td>
+                            <td headers="C4962124929178907">BEL</td>
+                            <td headers="C4962519138178908">Brussels Airlines</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">WY</td>
+                            <td headers="C4962124929178907">OMA</td>
+                            <td headers="C4962519138178908">Oman Air</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">Marcella Bonetteo</td>
+                            <td headers="C4964499766178909">Duty Mobile: 0173 3606473</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Return Catering</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">Direct Maintenance</td>
+                            <td headers="C4966550852178911">EFM</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">JW</td>
+                            <td headers="C4962124929178907">PWF</td>
+                            <td headers="C4962519138178908">Private Wings</td>
+                            <td align="right" headers="C4962953444178908">84</td>
+                            <td align="right" headers="C4979292396178922">84</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">OCC:</td>
+                            <td headers="C4964499766178909">ops@private-wings.de</td>
+                            <td headers="C4964877291178910">N&#x2F;A</td>
+                            <td headers="C4965331581178910">N&#x2F;A</td>
+                            <td headers="C4965768323178910">AFS (Air BP)</td>
+                            <td headers="C4966128476178911">maintenance@private-wings</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">no cleaning in MUC</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">5O</td>
+                            <td headers="C4962124929178907">5O</td>
+                            <td headers="C4962519138178908">FedEx &#x2F; TNT &#x2F; 3V</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">TNT 089 358175007 oder</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">B4</td>
+                            <td headers="C4962124929178907">BYD</td>
+                            <td headers="C4962519138178908">BEOND</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">no</td>
+                            <td headers="C4965331581178910">Air Catering</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">FLTechnics</td>
+                            <td headers="C4966550852178911">by aerogate</td>
+                            <td headers="C4972487683178916">Camso</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">GQ</td>
+                            <td headers="C4962124929178907">SEH</td>
+                            <td headers="C4962519138178908">Sky Express</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS (fuel release req,)</td>
+                            <td headers="C4966128476178911">Nayak (auf Req. vom PIC</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">EW</td>
+                            <td headers="C4962124929178907">EWG</td>
+                            <td headers="C4962519138178908">Eurowings</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">AA</td>
+                            <td headers="C4962124929178907">AAL</td>
+                            <td headers="C4962519138178908">American Airlines</td>
+                            <td align="right" headers="C4962953444178908">0</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Mafifi</td>
+                            <td headers="C4964499766178909">reps</td>
+                            <td headers="C4964877291178910">LUG</td>
+                            <td headers="C4965331581178910">LSG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">DL</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">RU</td>
+                            <td headers="C4962124929178907">ABW</td>
+                            <td headers="C4962519138178908">Air Bridge Cargo</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">N&#x2F;A</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">GG on request</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">Y8</td>
+                            <td headers="C4962124929178907">YZR</td>
+                            <td headers="C4962519138178908">Yangtze River</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Augsburg Air Caterer</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">LH</td>
+                            <td headers="C4972487683178916">--</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">F5</td>
+                            <td headers="C4962124929178907">ATC</td>
+                            <td headers="C4962519138178908">ATC</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">N&#x2F;A</td>
+                            <td headers="C4964499766178909">N&#x2F;A</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Gate Gourmet</td>
+                            <td headers="C4965768323178910">Skytanking</td>
+                            <td headers="C4966128476178911">Eigene Techniker o&#x2F;b</td>
+                            <td headers="C4966550852178911">Aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">V3</td>
+                            <td headers="C4962124929178907">CRP</td>
+                            <td headers="C4962519138178908">Carpat Air</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">LI</td>
+                            <td headers="C4962124929178907">EZZ</td>
+                            <td headers="C4962519138178908">ETF Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS (check Fuelrelease!)</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">-</td>
+                            <td headers="C4962124929178907">BUR</td>
+                            <td headers="C4962519138178908">Air Bucharest</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">ZQ</td>
+                            <td headers="C4962124929178907">GER</td>
+                            <td headers="C4962519138178908">German Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">auf Req. durch Headquater</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Camso</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">6Y</td>
+                            <td headers="C4962124929178907">ART</td>
+                            <td headers="C4962519138178908">Smart Lynx</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Camso</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">FI</td>
+                            <td headers="C4962124929178907">ICE</td>
+                            <td headers="C4962519138178908">Icelandair</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">N&#x2F;A</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">LH Cargo</td>
+                            <td headers="C4965331581178910">N&#x2F;A</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">N&#x2F;A</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">2S</td>
+                            <td headers="C4962124929178907">STW</td>
+                            <td headers="C4962519138178908">Southwind</td>
+                            <td align="right" headers="C4962953444178908">83</td>
+                            <td align="right" headers="C4979292396178922">69</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">NJ</td>
+                            <td headers="C4962124929178907">RCR</td>
+                            <td headers="C4962519138178908">Cargo ROM Airlines</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">cargogate</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">ov</td>
+                            <td headers="C4962124929178907">oms</td>
+                            <td headers="C4962519138178908">Salam Air</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">0</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">return catering o&#x2F;b</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">o&#x2F;b Techniker</td>
+                            <td headers="C4966550852178911">singleman</td>
+                            <td headers="C4972487683178916">HEICO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">A9</td>
+                            <td headers="C4962124929178907">TGZ</td>
+                            <td headers="C4962519138178908">Georgian Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">N8</td>
+                            <td headers="C4962124929178907">NCR</td>
+                            <td headers="C4962519138178908">NCR</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Herr Klaus Follrich</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">Gate Gourmet</td>
+                            <td headers="C4965768323178910">Skytanking</td>
+                            <td headers="C4966128476178911">Eigener Techniker o&#x2F;b</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heiko</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">P8</td>
+                            <td headers="C4962124929178907">SRN</td>
+                            <td headers="C4962519138178908">Sprint Air</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">-</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">-</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">SR</td>
+                            <td headers="C4962124929178907">SDR</td>
+                            <td headers="C4962519138178908">Sundair</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">NA</td>
+                            <td headers="C4964499766178909">NA</td>
+                            <td headers="C4964877291178910">NA</td>
+                            <td headers="C4965331581178910">Air Caterer Munich</td>
+                            <td headers="C4965768323178910">SKY</td>
+                            <td headers="C4966128476178911">NA</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">Heico</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">W5</td>
+                            <td headers="C4962124929178907">IRM</td>
+                            <td headers="C4962519138178908">Mahan Air</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Hr. Danesh (DUS)</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">GG</td>
+                            <td headers="C4965768323178910">no contract - returnfuel</td>
+                            <td headers="C4966128476178911">Techniker an Bord</td>
+                            <td headers="C4966550852178911">-</td>
+                            <td headers="C4972487683178916">ASM</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">TK</td>
+                            <td headers="C4962124929178907">THY</td>
+                            <td headers="C4962519138178908">Turkish Airlines</td>
+                            <td align="right" headers="C4962953444178908">88</td>
+                            <td align="right" headers="C4979292396178922">70</td>
+                            <td align="right" headers="C4963360188178908">35</td>
+                            <td align="right" headers="C4963730746178909">10</td>
+                            <td headers="C4964105171178909">Nabil -</td>
+                            <td headers="C4964499766178909">Station</td>
+                            <td headers="C4964877291178910">Cargogate</td>
+                            <td headers="C4965331581178910">GateGourmet</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">TK (ass. LH)</td>
+                            <td headers="C4966550852178911">singleman</td>
+                            <td headers="C4972487683178916">CAMSO</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">BY</td>
+                            <td headers="C4962124929178907">TOM</td>
+                            <td headers="C4962519138178908">TUI Airways</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">Homebase: London Luton</td>
+                            <td headers="C4964499766178909">-</td>
+                            <td headers="C4964877291178910">LUG</td>
+                            <td headers="C4965331581178910">-</td>
+                            <td headers="C4965768323178910">-</td>
+                            <td headers="C4966128476178911">-</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                        <tr>
+                            <td headers="C4961769353178907">RJ</td>
+                            <td headers="C4962124929178907">RJA</td>
+                            <td headers="C4962519138178908">Royal Jordanian</td>
+                            <td align="right" headers="C4962953444178908">-</td>
+                            <td align="right" headers="C4979292396178922">-</td>
+                            <td align="right" headers="C4963360188178908">-</td>
+                            <td align="right" headers="C4963730746178909">-</td>
+                            <td headers="C4964105171178909">
+                                Hr. P. T&#xF6;pfer-von-Sch&#xFC;tz
+                            </td>
+                            <td headers="C4964499766178909">fax</td>
+                            <td headers="C4964877291178910">cargogate</td>
+                            <td headers="C4965331581178910">LSG</td>
+                            <td headers="C4965768323178910">AFS</td>
+                            <td headers="C4966128476178911">LH</td>
+                            <td headers="C4966550852178911">aerogate</td>
+                            <td headers="C4972487683178916">-</td>
+                          					<td>
+                            <button class="exportButton">Export</button>
+	                       		 							</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+document.querySelectorAll('.exportButton').forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Get the row the button is in
+        var row = button.parentElement.parentElement;
+        // Get the cells of the row
+        var cells = row.getElementsByTagName('td');
+        // Get the content of the first cell
+        var airlineCode = cells[0].textContent;
+        // Create a new table
+        var newTable = document.createElement('table');
+        // Copy the structure of the main table to the new table
+        newTable.innerHTML = '<thead><tr><th>Airline Code</th><th>3-letter Code</th><th>Name</th><th>pwm</th><th>pwf</th><th>pwc</th><th>pwi</th><th>Station</th><th>Tix</th><th>Cargo</th><th>Catering</th><th>Fuel</th><th>Technik</th><th>Pushback</th><th>Cleaning</th></tr></thead><tbody></tbody>';
+        // Create a new row and add it to the new table
+        var newRow = newTable.querySelector('tbody').insertRow(-1);
+        // Copy the cells of the original row to the new row
+        for (var i = 0; i < cells.length - 1; i++) {
+            var newCell = newRow.insertCell(-1);
+            newCell.innerHTML = cells[i].innerHTML;
+        }
+        // Wrap the new table in the standard HTML tags
+        var html = '<!DOCTYPE html><html><head><title>' + airlineCode + '</title><style>body {font-family: Helvetica, Arial, sans-serif;font-size: 8px;line-height: 16px};table {width: 100%;border: 1px solid;border-collapse: collapse;} th, td {padding: 1px;text-align: left;border: 2px solid #ddd;} th {background-color: #f2f2f2;}</style></head><body>' + newTable.outerHTML + '</body></html>';
+          
+        // Save the new table in a new HTML file
+        var blob = new Blob([html], {type: 'text/html'});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = airlineCode + '.html';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+});
+</script>
+
+</body>
+
+</html>

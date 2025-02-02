@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitarbeiterverzeichnis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .more-info {
+            display: block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .details {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #333;
+            display: none;
+        }
+
+        /* Hierarchische Struktur */
+        .ceo {
+            margin-bottom: 60px;
+        }
+
+        .level-1 {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .level-2 {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        /* Verbindungslinien */
+        .ceo::before,
+        .level-1::before,
+        .level-1 .card::before,
+        .team::before {
+            content: '';
+            position: absolute;
+            background-color: forestgreen;
+            transition: height 0.5s ease, width 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .ceo::before {
+            border-left: 2px solid forestgreen;
+            height: 0;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .level-1::before {
+            border-left: 2px solid forestgreen;
+            height: 0;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .level-1 .card::before {
+            border-top: 2px solid forestgreen;
+            width: 0;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .team::before {
+            border-left: 2px solid forestgreen;
+            height: 0;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Linien bei Hover über Karten anzeigen */
+        .ceo:hover::before,
+        .level-1:hover::before,
+        .level-1 .card:hover::before,
+        .team:hover::before {
+            opacity: 1;
+        }
+
+        .ceo:hover::before {
+            height: 40px;
+        }
+
+        .level-1:hover::before {
+            height: 40px;
+        }
+
+        .level-1 .card:hover::before {
+            width: 100%;
+        }
+
+        .team:hover::before {
+            height: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .level-1, .level-2 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            /* Verbindungslinien im Responsive-Modus ausblenden */
+            .ceo::before,
+            .level-1::before,
+            .level-1 .card::before,
+            .team::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="org-chart">
+        <!-- Chef -->
+        <div class="card ceo" data-id="1">
+            <div class="card-content">
+                <h2>Ufuk </h2>
+                <p>CEO</p>
+                <a href="#" class="more-info">Mehr erfahren</a>
+            </div>
+            <div class="details">
+                <p>E-Mail: max.mustermann@firma.de</p>
+                <p>Telefon: +49 123 456789</p>
+            </div>
+        </div>
+
+        <!-- Abteilungsleiter -->
+        <div class="level-1">
+            <div class="card" data-id="2">
+                <div class="card-content">
+                    <h2>Özi</h2>
+                    <p>Leiterin Marketing</p>
+                    <a href="#" class="more-info">Mehr erfahren</a>
+                </div>
+                <div class="details">
+                    <p>E-Mail: erika.musterfrau@firma.de</p>
+                    <p>Telefon: +49 123 456788</p>
+                </div>
+            </div>
+            
+                        <div class="card" data-id="3">
+                <div class="card-content">
+                    <h2>Schneider1</h2>
+                    <p>Leiterin Beschwerden</p>
+                    <a href="#" class="more-info">Mehr erfahren</a>
+                </div>
+                <div class="details">
+                    <p>E-Mail: erika.musterfrau@firma.de</p>
+                    <p>Telefon: +49 123 456788</p>
+                </div>
+            </div>
+
+            <div class="card" data-id="4">
+                <div class="card-content">
+                    <h2>MAC</h2>
+                    <p>Leiter IT</p>
+                    <a href="#" class="more-info">Mehr erfahren</a>
+                </div>
+                <div class="details">
+                    <p>E-Mail: hans.mueller@firma.de</p>
+                    <p>Telefon: +49 123 456787</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mitarbeiter unter den Abteilungsleitern -->
+        <div class="level-2">
+            <div class="team marketing">
+                <div class="card" data-id="5">
+                    <div class="card-content">
+                        <h2>BAU</h2>
+                        <p>Marketing Manager</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: anna.schmidt@firma.de</p>
+                        <p>Telefon: +49 123 456786</p>
+                    </div>
+                </div>
+
+                <div class="card" data-id="6">
+                    <div class="card-content">
+                        <h2>Andreas</h2>
+                        <p>Social Media Manager</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: tom.bauer@firma.de</p>
+                        <p>Telefon: +49 123 456785</p>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="team beschwerden">
+                <div class="card" data-id="7">
+                    <div class="card-content">
+                        <h2>Schneider2</h2>
+                        <p>Marketing Manager</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: anna.schmidt@firma.de</p>
+                        <p>Telefon: +49 123 456786</p>
+                    </div>
+                </div>
+
+
+                <div class="card" data-id="8">
+                    <div class="card-content">
+                        <h2>Schneider3</h2>
+                        <p>Social Media Manager</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: tom.bauer@firma.de</p>
+                        <p>Telefon: +49 123 456785</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team it">
+                <div class="card" data-id="9">
+                    <div class="card-content">
+                        <h2>Melanie</h2>
+                        <p>Softwareentwicklerin</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: julia.fischer@firma.de</p>
+                        <p>Telefon: +49 123 456784</p>
+                    </div>
+                </div>
+
+                <div class="card" data-id="10">
+                    <div class="card-content">
+                        <h2>Hakan</h2>
+                        <p>Systemadministrator</p>
+                        <a href="#" class="more-info">Mehr erfahren</a>
+                    </div>
+                    <div class="details">
+                        <p>E-Mail: paul.weber@firma.de</p>
+                        <p>Telefon: +49 123 456783</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const moreInfoLink = card.querySelector('.more-info');
+                const details = card.querySelector('.details');
+
+                moreInfoLink.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (details.style.display === 'none' || details.style.display === '') {
+                        details.style.display = 'block';
+                        moreInfoLink.textContent = 'Weniger anzeigen';
+                    } else {
+                        details.style.display = 'none';
+                        moreInfoLink.textContent = 'Mehr erfahren';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

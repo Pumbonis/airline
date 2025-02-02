@@ -1,0 +1,116 @@
+I need a php live Website with a Table of 20 rows and four columns. 
+I manually want to insert in each field in the first and third column five digital numbers. 
+In each field of the second and fourth column I want to insert two digits. 
+A Button, below the table, named "Qatar" will save a new HTML file with the prefix "QR-" and the actual date "day"-"month", 
+containing a Table with the input of the rows and columns.
+
+
+
+
+
+auf einer seite mit mehreren select feldern soll sich wenn das value 'onto' ausgewählt wird 
+zusätzlich zu diesem select feld ein vier zeichen langes textfeld angezeigt werden. 
+dieses soll für alle select felder unabhängig voneinander funktionieren. 
+die inhalte der select option und des textfeldes sollen nach dem abschicken des formulars auf die neue seite mit übertragen werden. 
+eine lösung soll mit php und javascript erreicht werden.
+
+
+
+I need a php live Website with a Table of 20 rows and four columns. 
+I manually want to insert in each field in the first and third column five digital numbers. 
+In each field of the second and fourth column I need a select field with several options. 
+additionaly i need an extra text field to insert comments.
+A Button, below the table, named "Qatar" will save a new HTML file with the prefix "QR-" and the actual date "day"-"month", 
+containing a Table with the input of the rows, columns and the extra text field.
+
+
+
+
+ich brauche eine php website mit einem table mit 12 reihen und sechs spalten. 
+in jedes feld der ersten und vierten spalte will ich jeweils eine maximal fünfstellige Zahlen eingeben. 
+in jedes feld der zweiten und fünften spalte will ich aus einem select feld mit mehreren optionen auswählen. 
+wenn eine option mit dem value 'onto' ausgewählt wird, soll ein vier zeichen langes textfeld in der spalte rechts neben dem select feld angezeigt werden. 
+kein feld ist required.
+A Button, below the table, named "Qatar" will save a new html file with the prefix "QR-" and 
+the actual date "day"-"month", containing a Table with the input of the rows and columns.
+
+
+input.php
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Website</title>
+</head>
+<body>
+    <form action="save_data.php" method="post">
+        <table border="1">
+            <?php for ($i = 0; $i < 12; $i++): ?>
+                <tr>
+                    <td><input type="number" name="col1[]" maxlength="5" required></td>
+                    <td><input type="number" name="col2[]" maxlength="5" required></td>
+                    <td>
+                        <select name="col3[]" onchange="showText(this, 'text1')">
+                            <option value="">Select</option>
+                            <?php for ($j = 1; $j <= 12; $j++): ?>
+                                <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                            <?php endfor; ?>
+                            <option value="onto">Onto</option>
+                        </select>
+                        <input type="text" name="text1[]" id="text1" maxlength="4" style="display: none;">
+                    </td>
+                    <td><input type="number" name="col4[]" maxlength="5" required></td>
+                    <td>
+                        <select name="col5[]" onchange="showText(this, 'text2')">
+                            <option value="">Select</option>
+                            <?php for ($j = 1; $j <= 12; $j++): ?>
+                                <option value="<?php echo $j; ?>"><?php echo $j; ?></option>
+                            <?php endfor; ?>
+                            <option value="onto">Onto</option>
+                        </select>
+                        <input type="text" name="text2[]" id="text2" maxlength="4" style="display: none;">
+                    </td>
+                </tr>
+            <?php endfor; ?>
+        </table>
+        <input type="submit" name="save" value="Qatar">
+    </form>
+    <script>
+        function showText(select, textId) {
+            var selectedOption = select.options[select.selectedIndex].value;
+            if (selectedOption === 'onto') {
+                document.getElementById(textId).style.display = 'block';
+            } else {
+                document.getElementById(textId).style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+save-data.php
+
+<?php
+if (isset($_POST['save'])) {
+    $col1 = $_POST['col1'];
+    $col2 = $_POST['col2'];
+    $col3 = $_POST['col3'];
+    $text1 = $_POST['text1'];
+    $col4 = $_POST['col4'];
+    $col5 = $_POST['col5'];
+    $text2 = $_POST['text2'];
+
+    $date = date('d-m');
+    $filename = "QR-" . $date . ".txt";
+
+    $data = "Table Data:\n";
+    for ($i = 0; $i < 12; $i++) {
+        $data .= $col1[$i] . "\t" . $col2[$i] . "\t" . $col3[$i] . "\t" . $text1[$i] . "\t" . $col4[$i] . "\t" . $col5[$i] . "\t" . $text2[$i] . "\n";
+    }
+
+    file_put_contents($filename, $data);
+    echo "Data saved successfully!";
+}
+?>

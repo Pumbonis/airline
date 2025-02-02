@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMC-Rechner</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="manifest" href="/manifest.json">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+    <!--
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">-->
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #fff;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 6px .1em rgba(0, 0, 0, 0.3);
+            /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);*/
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+            width: 50%; 
+        }
+        .display {
+            width: 0%;
+            height: 0px;
+            font-size: 1.5em;
+            text-align: right;
+            margin-left: auto;
+            margin-right: auto;
+            visibility: hidden;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .button {
+            width: 100%;
+            height: 50px;
+            font-family: "Lobster", system-ui;
+            /*'Pacifico', cursive;*/
+            font-size: 1.4em;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px .1em rgba(0, 0, 0, 0.3);
+
+            cursor: pointer;
+            background-color: #7bea7b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .button:hover {
+            background-color: #7bea7b;
+            /*#d0d0d0;*/
+        }
+        .button.operator {
+            background-color: #ff9500;
+            color: #fff;
+        }
+        .button.operator:hover {
+            background-color: #ff9500;
+            /*#e08900;*/
+        }
+        .button .info {
+            font-size: 0.45em;
+            color: #888;
+            margin-top: 2px;
+        }
+        .button .info2 {
+            font-size: 0.45em;
+            color: #fff;
+            margin-top: 2px;
+        }
+        .buttonempty {
+            width: 100%;
+            height: 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .title-box {
+            font-family: "Lobster", Sans-Serif;
+            /*'Pacifico', cursive;*/
+            font-size: 1.7em;
+            background-color: #ff9500;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px .1em rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table.dltrc {
+            width: 60%;
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 0px;
+            border: solid black 2px;
+            border-radius: 8px;
+        }
+        tr.dlheader {
+            text-align: center;
+            font-weight: bold;
+            border-left: solid black 1px;
+            padding: 2px;
+        }
+        td.dlheader {
+            background: #90ee90;
+            text-align: center;
+            font-weight: bold;
+            border-left: solid black 1px;
+            border-radius: 0px;
+            padding: 2px;
+        }
+        tr.dlinfo,
+        td.dlinfo {
+            text-align: center;
+            border-left: solid black 1px;
+            border-top: solid black 1px;
+            padding: 2px;
+        }
+        td.dlinfo:first-child,
+        td.dlheader:first-child {
+            border-left: none;
+        }
+        td.dlheader:first-child {
+            border-radius: 5px 0 0 0;
+        }
+        td.dlheader:last-child {
+            border-radius: 0 5px 0 0;
+        }
+        tr.hover01:hover, tr.hover02:hover {
+            background-color: #dde6ee;
+        }
+        tr.hover02:hover:last-child {
+            background-color: #dde6ee;
+            border-radius: 0 0 6px 6px;
+        }
+        td.hover01:hover {
+            background-color: #dde6ee;
+        }
+        td.hover02:hover {
+            background-color: #dde6ee;
+        }
+        td.hover02:first-child {
+            border-radius: 0 0 0 6px;
+        }
+        td.hover02:last-child {
+            border-radius: 0 0 6px 0;
+        }
+        div.at-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .at-item {
+            font-family: "Lobster", Sans-Serif;
+            color: #3079ed;
+            font-weight: bold;
+            font-size: 1.2em;
+            animation-name: bounce-top;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: 3;
+            animation-direction: normal;
+            animation-fill-mode: none;
+        }
+@keyframes bounce-top {
+            0% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-24px);
+            }
+            55% {
+                transform: translateY(0);
+            }
+            65% {
+                transform: translateY(-12px);
+            }
+            75% {
+                transform: translateY(0);
+            }
+            82% {
+                transform: translateY(-6px);
+            }
+            87% {
+                transform: translateY(0);
+            }
+            93% {
+                transform: translateY(-4px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        .shake {
+            animation: horizontal-shaking 0.15s infinite;
+        }
+
+        /* tilt-n-move-shaking - shake 0.25s; horizontal-shaking; */
+
+@keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+@keyframes tilt-n-move-shaking {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(5px, 5px) rotate(5deg);
+            }
+            50% {
+                transform: translate(0, 0) rotate(0eg);
+            }
+            75% {
+                transform: translate(-5px, 5px) rotate(-5deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+
+
+@keyframes horizontal-shaking {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(5px);
+            }
+            50% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="title-box">
+            LMC-Rechner
+        </div>
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button class="buttonempty"></button>
+            <button class="button operator" onclick="clearDisplay()">Clear
+                <span class="info2">Reset</span>
+            </button>
+            <button class="buttonempty"></button>
+            <button class="button" onclick="appendToDisplay('88')">Male
+                <span class="info">88 kg</span>
+            </button>
+            <button class="button" onclick="appendToDisplay('70')">Female
+                <span class="info">70 kg</span>
+            </button>
+            <button class="button" onclick="appendToDisplay('35')">Child
+                <span class="info">35 kg</span>
+            </button>
+            <button class="button" onclick="appendToDisplay('0')">Infant
+                <span class="info">0 kg</span>
+            </button>
+            <button class="buttonempty">
+                <div class='at-container'>
+                    <div class='at-item'>
+                        MAC
+                    </div>
+                </div>
+            </button>
+            <button class="button" onclick="appendToDisplay('20')">Bag
+                <span class="info">20 kg</span>
+            </button>
+        </div>
+        <table id="resultTable" class="dltrc" style="margin-left: auto; margin-right: auto; background:none">
+            <tbody>
+                <tr class="dlheader">
+                    <td class="dlheader">Anzahl</td>
+                    <td class="dlheader">Typ</td>
+                    <td class="dlheader">Summe</td>
+                </tr>
+                <tr class="dlinfo hover01">
+                    <td id="countM" class="dlinfo hover01">0</td>
+                    <td class="dlinfo hover01">M</td>
+                    <td id="valueM" class="dlinfo hover01">0 kg</td>
+                </tr>
+                <tr class="dlinfo hover01">
+                    <td id="countF" class="dlinfo hover01">0</td>
+                    <td class="dlinfo hover01">F</td>
+                    <td id="valueF" class="dlinfo hover01">0 kg</td>
+                </tr>
+                <tr class="dlinfo hover01">
+                    <td id="countC" class="dlinfo hover01">0</td>
+                    <td class="dlinfo hover01">C</td>
+                    <td id="valueC" class="dlinfo hover01">0 kg</td>
+                </tr>
+                <tr class="dlinfo hover01">
+                    <td id="countI" class="dlinfo hover01">0</td>
+                    <td class="dlinfo hover01">Inf</td>
+                    <td id="valueI" class="dlinfo hover01">0 kg</td>
+                </tr>
+                <tr class="dlinfo hover01">
+                    <td id="countBag" class="dlinfo hover01">0</td>
+                    <td class="dlinfo hover01">B</td>
+                    <td id="valueBag" class="dlinfo hover01">0 kg</td>
+                </tr>
+                <tr class="dlinfo2 hover02">
+                    <td id="countTotal" class="dlinfo hover02">0</td>
+                    <td class="dlinfo hover01">Gesamt</td>
+                    <td id="valueTotal" class="dlinfo hover02">0 kg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let counts = {
+            M: 0,
+            F: 0,
+            C: 0,
+            I: 0,
+            Bag: 0
+        };
+        let values = {
+            M: 0,
+            F: 0,
+            C: 0,
+            I: 0,
+            Bag: 0
+        };
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+            updateCountsAndValues(value);
+
+
+        }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+            resetCountsAndValues();
+            // shake it
+            const calculator = document.querySelector('.calculator');
+            calculator.classList.add('shake');
+            setTimeout(() => {
+                calculator.classList.remove('shake');
+            }, 500);
+        }
+
+
+        function calculateResult() {
+            const display = document.getElementById('display');
+            const expression = display.value;
+            try {
+                const result = evaluateExpression(expression);
+                display.value = result;
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+        function evaluateExpression(expression) {
+            const tokens = expression.match(/(\d+\.\d+|\d+|[+\-*/()])/g);
+            if (!tokens) throw new Error('Invalid expression');
+            const precedence = {
+                '+': 1,
+                '-': 1,
+                '*': 2,
+                '/': 2
+            };
+            const outputQueue = [];
+            const operatorStack = [];
+            tokens.forEach(token => {
+                if (/\d/.test(token)) {
+                    outputQueue.push(parseFloat(token));
+                } else if (token in precedence) {
+                    while (operatorStack.length && precedence[operatorStack[operatorStack.length - 1]] >= precedence[token]) {
+                        outputQueue.push(operatorStack.pop());
+                    }
+                    operatorStack.push(token);
+                } else if (token === '(') {
+                    operatorStack.push(token);
+                } else if (token === ')') {
+                    while (operatorStack.length && operatorStack[operatorStack.length - 1] !== '(') {
+                        outputQueue.push(operatorStack.pop());
+                    }
+                    operatorStack.pop();
+                }
+            });
+            while (operatorStack.length) {
+                outputQueue.push(operatorStack.pop());
+            }
+            const evaluationStack = [];
+            outputQueue.forEach(token => {
+                if (typeof token === 'number') {
+                    evaluationStack.push(token);
+                } else {
+                    const b = evaluationStack.pop();
+                    const a = evaluationStack.pop();
+                    switch (token) {
+                        case '+':
+                            evaluationStack.push(a + b);
+                            break;
+                        case '-':
+                            evaluationStack.push(a - b);
+                            break;
+                        case '*':
+                            evaluationStack.push(a * b);
+                            break;
+                        case '/':
+                            evaluationStack.push(a / b);
+                            break;
+                    }
+                }
+            });
+            return evaluationStack[0];
+        }
+        function updateCountsAndValues(value) {
+            const buttonMap = {
+                '88': 'M',
+                '70': 'F',
+                '35': 'C',
+                '0': 'I',
+                '20': 'Bag'
+            };
+            const button = buttonMap[value] || value;
+            if (button in counts) {
+                counts[button]++;
+                values[button] += parseFloat(value);
+                document.getElementById(`count${button}`).textContent = counts[button];
+                document.getElementById(`value${button}`).textContent = values[button] + ' kg';
+                updateTotal();
+            }
+        }
+        function updateTotal() {
+            const totalCount = Object.values(counts).reduce((a, b) => a + b, 0);
+            const totalValue = Object.values(values).reduce((a, b) => a + b, 0);
+            document.getElementById('countTotal').textContent = totalCount;
+            document.getElementById('valueTotal').textContent = totalValue + ' kg';
+        }
+        function resetCountsAndValues() {
+            for (const key in counts) {
+                counts[key] = 0;
+                values[key] = 0;
+                document.getElementById(`count${key}`).textContent = 0;
+                document.getElementById(`value${key}`).textContent = '0 kg';
+            }
+            document.getElementById('countTotal').textContent = 0;
+            document.getElementById('valueTotal').textContent = '0 kg';
+        }
+    </script>
+</body>
+</html>

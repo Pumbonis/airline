@@ -1,0 +1,110 @@
+TripInfoAZ: G
+CleaningAZ: G
+CleaningTelAZ: G
+FuelAZ: Hh
+FuelTelAZ: G
+StationAZ: G
+StationTelAZ: G
+TixTelAZ: G
+TechnikAZ: G
+TechnikTelAZ: G
+CateringAZ: G
+CateringTelAZ: G
+CargoAZ: G
+CargoTelAZ: G
+ICAOIATAAZ: G
+LMCAZ: G
+PushbackAZ: G
+zusatz1AZ: G
+
+TripInfoQR: Nein 
+CleaningQR: Camso
+CleaningTelQR: 84000  
+FuelQR: AFS 
+FuelTelQR:  
+StationQR: Björn 
+StationTelQR:  
+HoldsearchQR: ja  Plus Fotos bei Ankunft und Abflug. 
+TechnikQR: FLTechnics
+TechnikTelQR:  
+CateringQR: DO&CO 
+CateringTelQR:  
+CargoQR: Swissport 
+CargoTelQR:  
+ICAOIATAQR: QR 
+LMCQR: None
+PushbackQR: FLTechnics
+zusatz1QR: Hh
+
+TripInfoIV: Ja
+CleaningIV: Heico
+CleaningTelIV: 0
+FuelIV: AFS
+FuelTelIV: 0
+StationIV: Nein
+StationTelIV: 0
+TixTelIV: 0
+TechnikIV: ? 
+TechnikTelIV: 0
+CateringIV: DO&CO
+CateringTelIV: 0
+CargoIV: Nein
+CargoTelIV: 0
+ICAOIATAIV: IV 
+LMCIV: 0
+PushbackIV: aerogate 
+zusatz1IV: N
+TripInfoBAE: Ja
+CleaningBAE: C
+CleaningTelBAE:  
+FuelBAE:   
+FuelTelBAE:  
+StationBAE: Nein
+StationTelBAE:  
+TixTelBAE:  
+TechnikBAE:  
+TechnikTelBAE:  
+CateringBAE: ACM
+CateringTelBAE:  
+CargoBAE:  
+CargoTelBAE:  
+ICAOIATABAE: BAE
+LMCBAE: 0
+PushbackBAE: aerogate
+zusatz1BAE:  
+TripInfoFL: Ja
+CleaningFL: Ja
+CleaningTelFL: 0
+FuelFL: Ja
+FuelTelFL: 0
+StationFL: Ja
+StationTelFL: 0
+TixTelFL: 0
+TechnikFL: Ja
+TechnikTelFL: 0
+CateringFL: Ja
+CateringTelFL: 0
+CargoFL: Ja
+CargoTelFL: 0
+ICAOIATAFL: FL/
+LMCFL: Ja
+PushbackFL: aerogate 
+zusatz1FL: Nix
+TripInfoBR: Ja
+CleaningBR: Ja
+CleaningTelBR: 0
+FuelBR: Ja
+FuelTelBR: 0
+StationBR: Ja
+StationTelBR: 0
+TixTelBR: 0
+TechnikBR: Ja
+TechnikTelBR: 0
+CateringBR: Ja
+CateringTelBR: 0
+CargoBR: Ja
+CargoTelBR: 0
+ICAOIATABR: BR/EVA
+LMCBR: Ja
+PushbackBR: Ja
+zusatz1BR: Nix
